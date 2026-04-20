@@ -493,7 +493,7 @@
     },
     "interpretive_notes": {
       "core_teaching": "Freedom lies in non-reactivity toward inner states.",
-      "scope": "philosical",
+      "scope": "philosophical",
       "tone": "analytical"
     },
     "image_tags": ["Krishna teaching gunas"]
@@ -624,5 +624,451 @@
       "tone": "assuring"
     },
     "image_tags": ["Krishna blessing Arjuna"]
+  },
+  {
+    "id": "BG_1_28_29",
+    "chapter": 1,
+    "verses": [28, 29],
+    "sloka_sanskrit_iast": "Dṛṣṭvemāṁ sva-janaṁ kṛṣṇa yuyutsuṁ samupasthitam | Sīdanti mama gātrāṇi mukhaṁ ca pariśuṣyati || Vepathuś ca śarīre me roma-harṣaś ca jāyate | Gāṇḍīvaṁ sraṁsate hastāt tvak caiva paridahyate ||",
+    "translation_english": "Seeing my own people, O Krishna, arrayed and eager to fight, my limbs fail and my mouth dries. My body quivers, my hair stands on end, my bow slips from my hand, and my skin burns.",
+    "themes": ["grief", "fear", "moral_dilemma", "compassion"],
+    "keywords": ["vishada", "soka", "bhaya"],
+    "context": {
+      "chapter_theme": "arjuna_vishada_yoga",
+      "speaker": "Arjuna",
+      "listener": "Krishna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Arjuna's grief is the entry point for all spiritual inquiry — crisis can be a catalyst for wisdom.",
+      "scope": "ethical",
+      "tone": "vulnerable"
+    },
+    "image_tags": ["Arjuna on battlefield", "grief and confusion"]
+  },
+  {
+    "id": "BG_2_19_20",
+    "chapter": 2,
+    "verses": [19, 20],
+    "sloka_sanskrit_iast": "Ya enaṁ vetti hantāraṁ yaś cainaṁ manyate hatam | Ubhau tau na vijānīto nāyaṁ hanti na hanyate || Na jāyate mriyate vā kadācin nāyaṁ bhūtvā bhavitā vā na bhūyaḥ | Ajo nityaḥ śāśvato 'yaṁ purāṇo na hanyate hanyamāne śarīre ||",
+    "translation_english": "One who thinks the Self slays and one who thinks the Self is slain — both are mistaken. The Self neither slays nor is slain. The Self is never born, never dies. It is unborn, eternal, ever-existing, and primeval. It is not slain when the body is killed.",
+    "themes": ["self", "immortality", "grief", "metaphysics"],
+    "keywords": ["atma", "nitya", "aja", "avinashi"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Grief dissolves when one understands the eternal, indestructible nature of the Self.",
+      "scope": "metaphysical",
+      "tone": "clarifying"
+    },
+    "image_tags": ["Krishna teaching Arjuna", "eternal soul concept"]
+  },
+  {
+    "id": "BG_2_70",
+    "chapter": 2,
+    "verses": [70],
+    "sloka_sanskrit_iast": "Āpūryamāṇam acala-pratiṣṭhaṁ samudram āpaḥ praviśanti yadvat | Tadvat kāmā yaṁ praviśanti sarve sa śāntim āpnoti na kāma-kāmī ||",
+    "translation_english": "As rivers flow into the ocean, which remains undisturbed despite being ever full, so all desires enter the person of steady wisdom, and such a person attains peace — not the one who hankers after desires.",
+    "themes": ["peace", "equanimity", "desire", "wisdom"],
+    "keywords": ["shanti", "kama", "samudra", "sthita-prajna"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Peace comes not from suppressing desires but from a settled inner ocean that receives all without being disturbed.",
+      "scope": "philosophical",
+      "tone": "poetic"
+    },
+    "supportive_practices": ["meditation on inner stillness", "non-reactive awareness"],
+    "image_tags": ["ocean metaphor", "steady wisdom"]
+  },
+  {
+    "id": "BG_3_27",
+    "chapter": 3,
+    "verses": [27],
+    "sloka_sanskrit_iast": "Prakṛteḥ kriyamāṇāni guṇaiḥ karmāṇi sarvaśaḥ | Ahaṅkāra-vimūḍhātmā kartāham iti manyate ||",
+    "translation_english": "All actions are carried out in every way by the modes of nature. One deluded by ego thinks, 'I am the doer.'",
+    "themes": ["non_doership", "ego", "prakriti", "self_knowledge"],
+    "keywords": ["prakrti", "ahankara", "guna", "akarta"],
+    "context": {
+      "chapter_theme": "karma_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "The sense of 'I am the doer' is ego's illusion; nature acts through us when we are identified with the body-mind.",
+      "scope": "metaphysical",
+      "tone": "analytical"
+    },
+    "image_tags": ["Krishna teaching karma", "ego dissolution"]
+  },
+  {
+    "id": "BG_3_42",
+    "chapter": 3,
+    "verses": [42],
+    "sloka_sanskrit_iast": "Indriyāṇi parāṇy āhur indriyebhyaḥ paraṁ manaḥ | Manasas tu parā buddhir yo buddheḥ paratas tu saḥ ||",
+    "translation_english": "The senses are superior to the gross body; the mind is superior to the senses; the intellect is superior to the mind; and the Self is superior to the intellect.",
+    "themes": ["self_knowledge", "intellect", "mind", "senses", "hierarchy"],
+    "keywords": ["indriya", "manas", "buddhi", "atma"],
+    "context": {
+      "chapter_theme": "karma_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Understanding the hierarchy of the self helps one identify where to direct attention to overcome desire.",
+      "scope": "philosophical",
+      "tone": "analytical"
+    },
+    "image_tags": ["Krishna teaching hierarchy of self"]
+  },
+  {
+    "id": "BG_4_7_8",
+    "chapter": 4,
+    "verses": [7, 8],
+    "sloka_sanskrit_iast": "Yadā yadā hi dharmasya glānir bhavati bhārata | Abhyutthānam adharmasya tadātmānaṁ sṛjāmy aham || Paritrāṇāya sādhūnāṁ vināśāya ca duṣkṛtām | Dharma-saṁsthāpanārthāya sambhavāmi yuge yuge ||",
+    "translation_english": "Whenever there is a decline of righteousness and an increase of unrighteousness, O Arjuna, I manifest Myself. To protect the righteous, to annihilate the wicked, and to reestablish the principles of dharma, I appear age after age.",
+    "themes": ["dharma", "divine_intervention", "cosmic_order", "protection"],
+    "keywords": ["dharma", "adharma", "sambhava", "yuge-yuge"],
+    "context": {
+      "chapter_theme": "jnana_karma_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "The cosmic principle of dharma is self-correcting; divine force restores balance whenever it is severely disrupted.",
+      "scope": "cosmic",
+      "tone": "assuring"
+    },
+    "image_tags": ["Krishna avatar manifestation", "dharma restoration"]
+  },
+  {
+    "id": "BG_4_38",
+    "chapter": 4,
+    "verses": [38],
+    "sloka_sanskrit_iast": "Na hi jñānena sadṛśaṁ pavitram iha vidyate | Tat svayaṁ yoga-saṁsiddhaḥ kālena ātmani vindati ||",
+    "translation_english": "In this world, there is no purifier equal to knowledge. One perfected in yoga discovers this within oneself in time.",
+    "themes": ["knowledge", "purification", "yoga", "wisdom"],
+    "keywords": ["jnana", "pavitra", "yoga-siddha", "atma"],
+    "context": {
+      "chapter_theme": "jnana_karma_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Self-knowledge is the ultimate purifier because it dissolves the root cause of all entanglement.",
+      "scope": "philosophical",
+      "tone": "assuring"
+    },
+    "image_tags": ["Krishna teaching knowledge"]
+  },
+  {
+    "id": "BG_5_10",
+    "chapter": 5,
+    "verses": [10],
+    "sloka_sanskrit_iast": "Brahmaṇy ādhāya karmāṇi saṅgaṁ tyaktvā karoti yaḥ | Lipyate na sa pāpena padma-patram ivāmbhasā ||",
+    "translation_english": "One who performs action surrendering it to the divine, abandoning attachment, is not tainted by sin — just as a lotus leaf is not wetted by water.",
+    "themes": ["non_attachment", "action", "purification", "surrender"],
+    "keywords": ["asakti", "karma", "padma", "brahman"],
+    "context": {
+      "chapter_theme": "karma_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "The lotus metaphor captures how action without attachment remains pure — engaged in the world but not bound by it.",
+      "scope": "practical",
+      "tone": "poetic"
+    },
+    "supportive_practices": ["offering actions as service", "mindful non-attachment"],
+    "image_tags": ["lotus leaf metaphor", "non-attachment in action"]
+  },
+  {
+    "id": "BG_6_34_35",
+    "chapter": 6,
+    "verses": [34, 35],
+    "sloka_sanskrit_iast": "Cañcalaṁ hi manaḥ kṛṣṇa pramāthi balavad dṛḍham | Tasyāhaṁ nigrahaṁ manye vāyor iva suduṣkaram || Asaṁśayaṁ mahā-bāho mano durnigrahaṁ calam | Abhyāsena tu kaunteya vairāgyeṇa ca gṛhyate ||",
+    "translation_english": "The mind is restless, turbulent, obstinate, and very strong, O Krishna. I think it is as difficult to control as the wind. Without doubt, O mighty-armed one, the mind is difficult to control — but it can be brought under control through practice and detachment.",
+    "themes": ["mind", "meditation", "discipline", "practice"],
+    "keywords": ["manas", "chanchala", "abhyasa", "vairagya"],
+    "context": {
+      "chapter_theme": "dhyana_yoga",
+      "speaker": "Arjuna and Krishna",
+      "listener": "each other",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Arjuna voices the universal struggle with the restless mind; Krishna affirms the challenge but offers a concrete path: practice and non-attachment.",
+      "scope": "practical",
+      "tone": "realistic and encouraging"
+    },
+    "supportive_practices": ["daily meditation", "pranayama", "vairagya practice"],
+    "image_tags": ["mind control metaphor", "Arjuna questioning Krishna"]
+  },
+  {
+    "id": "BG_7_14",
+    "chapter": 7,
+    "verses": [14],
+    "sloka_sanskrit_iast": "Daivī hy eṣā guṇa-mayī mama māyā duratyayā | Mām eva ye prapadyante māyām etāṁ taranti te ||",
+    "translation_english": "This divine illusion of Mine, composed of the three modes of nature, is very difficult to overcome. But those who surrender to Me can cross beyond this Maya.",
+    "themes": ["maya", "illusion", "surrender", "liberation"],
+    "keywords": ["maya", "guna", "prapadyante", "tarana"],
+    "context": {
+      "chapter_theme": "jnana_vijnana_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Maya is not an obstacle to be destroyed by force but a veil to be dissolved through surrender and grace.",
+      "scope": "philosophical",
+      "tone": "sobering yet assuring"
+    },
+    "image_tags": ["Krishna maya teaching", "illusion and liberation"]
+  },
+  {
+    "id": "BG_8_6",
+    "chapter": 8,
+    "verses": [6],
+    "sloka_sanskrit_iast": "Yaṁ yaṁ vāpi smaran bhāvaṁ tyajaty ante kalevaram | Taṁ tam evaiti kaunteya sadā tad-bhāva-bhāvitaḥ ||",
+    "translation_english": "Whatever state of being one remembers when departing from the body at the time of death, O son of Kunti, that state one attains — always absorbed in that being.",
+    "themes": ["death", "consciousness", "remembrance", "afterlife"],
+    "keywords": ["smarana", "bhava", "anta-kala", "chitta"],
+    "context": {
+      "chapter_theme": "akshara_brahma_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "The quality of consciousness at death reflects a lifetime of inner cultivation; therefore, living mindfully is the preparation.",
+      "scope": "metaphysical",
+      "tone": "contemplative"
+    },
+    "image_tags": ["Krishna teaching death and consciousness"]
+  },
+  {
+    "id": "BG_9_27",
+    "chapter": 9,
+    "verses": [27],
+    "sloka_sanskrit_iast": "Yat karoṣi yad aśnāsi yaj juhoṣi dadāsi yat | Yat tapasyasi kaunteya tat kuruṣva mad-arpaṇam ||",
+    "translation_english": "Whatever you do, whatever you eat, whatever you offer in sacrifice, whatever you give, whatever austerity you perform — do that as an offering to Me.",
+    "themes": ["devotion", "surrender", "action", "bhakti"],
+    "keywords": ["arpana", "bhakti", "karma", "yajna"],
+    "context": {
+      "chapter_theme": "raja_vidya_raja_guhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "All of life becomes a sacred offering when infused with the spirit of devotion — this is the path of karma-bhakti synthesis.",
+      "scope": "devotional",
+      "tone": "inviting"
+    },
+    "supportive_practices": ["offering meals mindfully", "dedicating daily work to the divine", "sacred intention-setting"],
+    "image_tags": ["Krishna devotion teaching", "sacred offering"]
+  },
+  {
+    "id": "BG_10_20",
+    "chapter": 10,
+    "verses": [20],
+    "sloka_sanskrit_iast": "Aham ātmā guḍākeśa sarva-bhūtāśaya-sthitaḥ | Aham ādiś ca madhyaṁ ca bhūtānām anta eva ca ||",
+    "translation_english": "I am the Self, O Gudakesha, seated in the hearts of all beings. I am the beginning, middle, and end of all beings.",
+    "themes": ["self", "divine_immanence", "cosmic_origin", "consciousness"],
+    "keywords": ["atma", "hrdaya", "adi", "anta"],
+    "context": {
+      "chapter_theme": "vibhuti_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "The divine is not distant — it is the very Self within the heart of every being.",
+      "scope": "metaphysical",
+      "tone": "intimate"
+    },
+    "image_tags": ["Krishna as Self in all beings", "divine immanence"]
+  },
+  {
+    "id": "BG_11_8",
+    "chapter": 11,
+    "verses": [8],
+    "sloka_sanskrit_iast": "Na tu māṁ śakyase draṣṭum anenaiva sva-cakṣuṣā | Divyaṁ dadāmi te cakṣuḥ paśya me yogam aiśvaram ||",
+    "translation_english": "But you cannot see Me with your physical eyes. Therefore I give you divine eyes. Behold My supreme mystic power.",
+    "themes": ["divine_vision", "grace", "cosmic_form", "revelation"],
+    "keywords": ["divya-chakshus", "vishvarupa", "aisvara"],
+    "context": {
+      "chapter_theme": "vishvarupa_darshana_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Seeing the divine requires a transformed perception — grace opens what ordinary sight cannot reach.",
+      "scope": "devotional",
+      "tone": "awe_inspiring"
+    },
+    "image_tags": ["Arjuna receiving divine vision", "cosmic form revelation"]
+  },
+  {
+    "id": "BG_12_6_7",
+    "chapter": 12,
+    "verses": [6, 7],
+    "sloka_sanskrit_iast": "Ye tu sarvāṇi karmāṇi mayi sannyasya mat-parāḥ | Ananyenaiva yogena māṁ dhyāyanta upāsate || Teṣām ahaṁ samuddhartā mṛtyu-saṁsāra-sāgarāt | Bhavāmi na cirāt pārtha mayy āveśita-cetasām ||",
+    "translation_english": "But those who worship Me by surrendering all their activities, being devoted to Me with exclusive focus, meditating on Me — for them I am the swift savior from the ocean of birth and death, O Partha.",
+    "themes": ["devotion", "surrender", "liberation", "grace"],
+    "keywords": ["bhakti", "mukti", "samuddharta", "samsara"],
+    "context": {
+      "chapter_theme": "bhakti_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "For those who struggle with abstract philosophy, surrendered devotion is an accessible and complete path to liberation.",
+      "scope": "devotional",
+      "tone": "compassionate"
+    },
+    "image_tags": ["devotional Krishna", "liberation through bhakti"]
+  },
+  {
+    "id": "BG_13_28",
+    "chapter": 13,
+    "verses": [28],
+    "sloka_sanskrit_iast": "Samaṁ sarveṣu bhūteṣu tiṣṭhantaṁ parameśvaram | Vinaśyatsv avinaśyantaṁ yaḥ paśyati sa paśyati ||",
+    "translation_english": "One who sees the Supreme Lord dwelling equally in all beings — the imperishable within the perishable — truly sees.",
+    "themes": ["equality", "divine_vision", "self_in_all", "wisdom"],
+    "keywords": ["samam", "paramesvara", "avyaya", "pasyati"],
+    "context": {
+      "chapter_theme": "kshetra_kshetrajna_vibhaga_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Genuine spiritual vision sees the one imperishable Self equally in all forms — this is the foundation of compassion.",
+      "scope": "metaphysical",
+      "tone": "contemplative"
+    },
+    "image_tags": ["divine in all beings", "seeing with wisdom"]
+  },
+  {
+    "id": "BG_14_26",
+    "chapter": 14,
+    "verses": [26],
+    "sloka_sanskrit_iast": "Māṁ ca yo 'vyabhicāreṇa bhakti-yogena sevate | Sa guṇān samatītyaitān brahma-bhūyāya kalpate ||",
+    "translation_english": "One who serves Me with unwavering devotion through bhakti-yoga transcends these three modes of nature and reaches the level of Brahman.",
+    "themes": ["devotion", "transcendence", "gunas", "liberation"],
+    "keywords": ["bhakti-yoga", "avyabhicara", "guna-atita", "brahman"],
+    "context": {
+      "chapter_theme": "guna_traya_vibhaga_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Unwavering bhakti is not merely emotional sentiment but a complete yoga that lifts one beyond the conditioning of the three gunas.",
+      "scope": "devotional",
+      "tone": "affirming"
+    },
+    "image_tags": ["bhakti transcending gunas", "liberation through devotion"]
+  },
+  {
+    "id": "BG_15_15",
+    "chapter": 15,
+    "verses": [15],
+    "sloka_sanskrit_iast": "Sarvasya cāhaṁ hṛdi sanniviṣṭo mattaḥ smṛtir jñānam apohanaṁ ca | Vedaiś ca sarvair aham eva vedyo vedānta-kṛd veda-vid eva cāham ||",
+    "translation_english": "I am seated in the hearts of all beings. From Me come memory, knowledge, and forgetfulness. I am to be known through all the Vedas; I am the compiler of Vedanta and the knower of the Vedas.",
+    "themes": ["divine_immanence", "memory", "knowledge", "self"],
+    "keywords": ["hrdi", "smriti", "jnana", "vedanta"],
+    "context": {
+      "chapter_theme": "purushottama_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "The divine pervades all cognition — memory, understanding, and forgetting alike arise from and return to this presence within.",
+      "scope": "metaphysical",
+      "tone": "intimate"
+    },
+    "image_tags": ["Krishna within the heart", "divine source of knowledge"]
+  },
+  {
+    "id": "BG_16_3",
+    "chapter": 16,
+    "verses": [3],
+    "sloka_sanskrit_iast": "Tejaḥ kṣamā dhṛtiḥ śaucam adroho nāti-mānitā | Bhavanti sampadaṁ daivīm abhijātasya bhārata ||",
+    "translation_english": "Spiritual power, forgiveness, fortitude, purity, freedom from malice, and absence of excessive pride — these are the qualities of one born with divine endowment.",
+    "themes": ["virtue", "divine_qualities", "character", "forgiveness"],
+    "keywords": ["teja", "ksama", "dhriti", "saucha"],
+    "context": {
+      "chapter_theme": "daivasura_sampad_vibhaga_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Divine qualities are cultivable character traits — forgiveness and fortitude are as much spiritual practices as meditation.",
+      "scope": "ethical",
+      "tone": "enumerative"
+    },
+    "image_tags": ["divine character qualities", "Krishna teaching virtue"]
+  },
+  {
+    "id": "BG_17_3",
+    "chapter": 17,
+    "verses": [3],
+    "sloka_sanskrit_iast": "Sattvānurūpā sarvasya śraddhā bhavati bhārata | Śraddhāmayo 'yaṁ puruṣo yo yac-chraddhaḥ sa eva saḥ ||",
+    "translation_english": "The faith of each person, O Bharata, is shaped by their nature. A person is constituted by faith — whatever one deeply believes, that is what one becomes.",
+    "themes": ["faith", "nature", "identity", "belief"],
+    "keywords": ["shraddha", "svabhava", "sattva", "purusha"],
+    "context": {
+      "chapter_theme": "shraddha_traya_vibhaga_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "We are shaped by what we most fundamentally believe — faith is not blind but an expression of one's deepest inner nature.",
+      "scope": "philosophical",
+      "tone": "reflective"
+    },
+    "image_tags": ["Krishna on faith and nature", "identity and belief"]
+  },
+  {
+    "id": "BG_18_65_66",
+    "chapter": 18,
+    "verses": [65, 66],
+    "sloka_sanskrit_iast": "Man-manā bhava mad-bhakto mad-yājī māṁ namaskuru | Mām evaiṣyasi satyaṁ te pratijāne priyo 'si me || Sarva-dharmān parityajya mām ekaṁ śaraṇaṁ vraja | Ahaṁ tvāṁ sarva-pāpebhyo mokṣayiṣyāmi mā śucaḥ ||",
+    "translation_english": "Fix your mind on Me, be devoted to Me, worship Me, bow down to Me. You will come to Me — truly I promise you, for you are dear to Me. Abandon all varieties of dharma and simply surrender to Me alone. I shall deliver you from all sinful reactions — do not fear.",
+    "themes": ["surrender", "devotion", "liberation", "grace", "fearlessness"],
+    "keywords": ["sharanam", "sarva-dharma", "moksham", "priya"],
+    "context": {
+      "chapter_theme": "moksha_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "The culminating teaching of the Gita — complete surrender dissolves all fear and all karmic weight; grace is the ultimate refuge.",
+      "scope": "devotional",
+      "tone": "deeply compassionate"
+    },
+    "supportive_practices": ["surrender meditation", "letting go practices", "prayer of refuge"],
+    "image_tags": ["Krishna's ultimate teaching", "surrender and liberation"]
   }
 ]

@@ -76,10 +76,26 @@ class SystemState:
     refusal_reason: Optional[RefusalReason] = None
     execution_trace: List[str] = field(default_factory=list)
     final_response: Optional[str] = None
-    
+
+    # Agentic extensions
+    reformulation_count: int = 0
+    retrieval_confidence: float = 0.0   # avg score of top retrieved verses
+    active_query: str = ""              # working query; may differ from original after reformulation
+    steps_completed: List[str] = field(default_factory=list)
+
+    def __post_init__(self):
+        if not self.active_query:
+            self.active_query = self.query
+
     def add_trace(self, step: str, details: str = ""):
         trace_entry = f"[{step}] {details}" if details else f"[{step}]"
         self.execution_trace.append(trace_entry)
-    
+
+    def mark_step(self, step: str):
+        self.steps_completed.append(step)
+
     def should_refuse(self) -> bool:
         return self.intent.requires_refusal or self.refusal_reason is not None
+
+    def retrieval_confidence_ok(self, threshold: float = 0.25) -> bool:
+        return self.retrieval_confidence >= threshold

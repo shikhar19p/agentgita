@@ -51,8 +51,8 @@ class GitaGPTEvaluator:
     def _evaluate_test_case(self, test_case: Dict[str, Any], k: int):
         query = test_case['query']
         
-        state = SystemState(query=query)
-        
+        state = SystemState(query=query, active_query=query)
+
         state = self.orchestrator.intent_classifier.classify(state)
         
         should_refuse = test_case['should_refuse']
@@ -93,7 +93,7 @@ class GitaGPTEvaluator:
         
         if cited_verses:
             valid_citations = cited_verses.intersection(set(rv.verse_id for rv in state.retrieved_verses))
-            precision = len(valid_citations) / len(cited_verses) if cited_verses else 0.0
+            precision = len(valid_citations) / len(cited_verses)
             
             self.metrics.citation_results.append({
                 'test_id': test_case['id'],

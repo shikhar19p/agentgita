@@ -1,6 +1,6 @@
 system:
   name: "Gita GPT"
-  version: "1.0.0"
+  version: "2.0.0"
   mode: "production"
 
 corpus:
@@ -16,11 +16,15 @@ retrieval:
     top_k: 5
     context_expansion: true
     neighbor_verses: 2
-  
+
+  chroma:
+    persist_dir: ".chroma_db"
+    collection: "gita_verses"
+
   embeddings:
     model: "sentence-transformers/all-MiniLM-L6-v2"
     dimension: 384
-    
+
   sparse:
     algorithm: "bm25"
     k1: 1.5
@@ -32,11 +36,18 @@ reasoning:
     model: "models/gemini-2.5-flash"
     temperature: 0.3
     max_tokens: 1500
-  
+
   grounding:
     strict_mode: true
     fail_on_unsupported_claims: true
     citation_required: true
+
+  agentic:
+    max_retrieval_attempts: 3
+    confidence_threshold: 0.20
+    enable_query_reformulation: true
+    enable_conversation_memory: true
+    conversation_memory_turns: 10
 
 response:
   format: "structured"

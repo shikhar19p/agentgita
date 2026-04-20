@@ -1,67 +1,66 @@
-from typing import List, Dict, Any
 from src.core.state import SystemState
+
+ABSOLUTE_PHRASES = [
+    "the only way", "must always", "never", "the correct interpretation",
+    "the true meaning", "the single path", "the one answer",
+]
 
 
 class PluralityChecker:
-    
-    def __init__(self):
-        pass
-    
+
     def check(self, state: SystemState) -> SystemState:
         state.add_trace("PLURALITY_CHECK", "Starting plurality enforcement")
-        
+
         if not state.reasoning_graph:
             state.add_trace("PLURALITY_CHECK", "No reasoning to check")
             return state
-        
-        has_multiple_perspectives = self._check_multiple_perspectives(state)
-        
-        if has_multiple_perspectives:
-            state.add_trace("PLURALITY_CHECK", 
-                           "Multiple perspectives detected - ensuring balanced representation")
+
+        has_multiple = self._check_multiple_perspectives(state)
+        if has_multiple:
+            state.add_trace("PLURALITY_CHECK", "Multiple perspectives detected — ensuring balanced representation")
         else:
-            state.add_trace("PLURALITY_CHECK", 
-                           "Single unified perspective - no plurality concerns")
-        
-        has_scope_diversity = self._check_scope_diversity(state)
-        
-        if has_scope_diversity:
-            state.add_trace("PLURALITY_CHECK", 
-                           "Multiple interpretive scopes present - flagging for balanced treatment")
-        
+            state.add_trace("PLURALITY_CHECK", "Single unified perspective — no plurality concerns")
+
+        if self._check_scope_diversity(state):
+            state.add_trace("PLURALITY_CHECK", "Multiple interpretive scopes present — flagging for balanced treatment")
+
+        # Strip absolute language from reasoning nodes
+        violations = self._strip_absolute_language(state)
+        if violations:
+            state.add_trace("PLURALITY_CHECK", f"Softened {violations} absolute-language claim(s)")
+
         return state
-    
+
     def _check_multiple_perspectives(self, state: SystemState) -> bool:
-        perspective_count = 0
-        
-        for node in state.reasoning_graph:
-            if "Perspective A:" in node.claim or "Perspective B:" in node.claim:
-                perspective_count += 1
-        
-        return perspective_count >= 2
-    
+        return sum(
+            1 for node in state.reasoning_graph
+            if "Perspective A:" in node.claim or "Perspective B:" in node.claim
+        ) >= 2
+
     def _check_scope_diversity(self, state: SystemState) -> bool:
-        scopes = set()
-        
-        for rv in state.retrieved_verses:
-            verse_data = rv.verse_data
-            if "interpretive_notes" in verse_data:
-                scope = verse_data["interpretive_notes"].get("scope")
-                if scope:
-                    scopes.add(scope)
-        
+        scopes = {
+            rv.verse_data.get("interpretive_notes", {}).get("scope")
+            for rv in state.retrieved_verses
+        }
+        scopes.discard(None)
         return len(scopes) >= 2
-    
-    def _ensure_no_single_interpretation_assertion(self, state: SystemState) -> bool:
+
+    def _strip_absolute_language(self, state: SystemState) -> int:
+        """Replace absolute phrases with hedged alternatives. Returns count of edits."""
+        replacements = {
+            "the only way": "one possible way",
+            "must always": "may",
+            "never": "rarely",
+            "the correct interpretation": "one interpretation",
+            "the true meaning": "one understanding",
+            "the single path": "one path",
+            "the one answer": "one perspective",
+        }
+        count = 0
         for node in state.reasoning_graph:
-            claim_lower = node.claim.lower()
-            
-            absolute_phrases = [
-                "the only way", "must always", "never", "always",
-                "the correct interpretation", "the true meaning"
-            ]
-            
-            if any(phrase in claim_lower for phrase in absolute_phrases):
-                return False
-        
-        return True
+            lower = node.claim.lower()
+            for phrase, replacement in replacements.items():
+                if phrase in lower:
+                    node.claim = node.claim.replace(phrase, replacement)
+                    count += 1
+        return count
