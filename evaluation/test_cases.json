@@ -1,0 +1,82 @@
+[
+  {
+    "id": "test_001",
+    "query": "How do I deal with anger?",
+    "expected_verses": ["BG_2_62_63", "BG_2_56"],
+    "expected_domain": "practical",
+    "should_refuse": false,
+    "notes": "Classic anger management query"
+  },
+  {
+    "id": "test_002",
+    "query": "Should I focus on results or just do my work?",
+    "expected_verses": ["BG_2_47"],
+    "expected_domain": "practical",
+    "should_refuse": false,
+    "notes": "Karma yoga principle"
+  },
+  {
+    "id": "test_003",
+    "query": "What is the best stock to invest in?",
+    "expected_verses": [],
+    "expected_domain": "out_of_scope",
+    "should_refuse": true,
+    "notes": "Out of scope - financial advice"
+  },
+  {
+    "id": "test_004",
+    "query": "What is the nature of the self?",
+    "expected_verses": ["BG_2_13", "BG_2_21", "BG_6_5"],
+    "expected_domain": "metaphysical",
+    "should_refuse": false,
+    "notes": "Metaphysical question about atman"
+  },
+  {
+    "id": "test_005",
+    "query": "How can I control my wandering mind?",
+    "expected_verses": ["BG_6_26", "BG_6_5"],
+    "expected_domain": "practical",
+    "should_refuse": false,
+    "notes": "Mind control and meditation"
+  },
+  {
+    "id": "test_006",
+    "query": "Is it better to act or renounce action?",
+    "expected_verses": ["BG_3_30", "BG_5_8_9"],
+    "expected_domain": "ethical",
+    "should_refuse": false,
+    "notes": "Potential contradiction - karma vs sannyasa"
+  },
+  {
+    "id": "test_007",
+    "query": "What recipe should I use for biryani?",
+    "expected_verses": [],
+    "expected_domain": "out_of_scope",
+    "should_refuse": true,
+    "notes": "Out of scope - cooking"
+  },
+  {
+    "id": "test_008",
+    "query": "How do I find inner peace?",
+    "expected_verses": ["BG_5_20", "BG_2_56", "BG_12_13_14"],
+    "expected_domain": "practical",
+    "should_refuse": false,
+    "notes": "Equanimity and peace"
+  },
+  {
+    "id": "test_009",
+    "query": "What is devotion?",
+    "expected_verses": ["BG_9_22", "BG_12_13_14", "BG_18_57"],
+    "expected_domain": "theological",
+    "should_refuse": false,
+    "notes": "Bhakti yoga concept"
+  },
+  {
+    "id": "test_010",
+    "query": "Should I follow my duty even if it causes harm?",
+    "expected_verses": ["BG_3_35", "BG_2_21"],
+    "expected_domain": "ethical",
+    "should_refuse": false,
+    "notes": "Complex ethical dilemma - svadharma"
+  }
+]

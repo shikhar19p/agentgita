@@ -1,0 +1,628 @@
+[
+  {
+    "id": "BG_2_47",
+    "chapter": 2,
+    "verses": [47],
+    "sloka_sanskrit_iast": "Karmaṇy evādhikāras te mā phaleṣu kadācana | Mā karma-phala-hetur bhūr mā te saṅgo 'stvakarmaṇi ||",
+    "translation_english": "You have a right to perform your duty, but not to the fruits of action. Never consider yourself the cause of the results, and never be attached to inaction.",
+    "themes": ["action", "detachment", "duty"],
+    "keywords": ["karma", "phala", "asakti"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    }
+  },
+  {
+    "id": "BG_2_62_63",
+    "chapter": 2,
+    "verses": [62, 63],
+    "sloka_sanskrit_iast": "Dhyāyato viṣayān puṁsaḥ saṅgas teṣūpajāyate | Saṅgāt sañjāyate kāmaḥ kāmāt krodho 'bhijāyate || Krodhād bhavati sammohaḥ sammohāt smṛti-vibhramaḥ | Smṛti-bhraṁśād buddhi-nāśo buddhi-nāśāt praṇaśyati ||",
+    "translation_english": "While contemplating the objects of the senses, attachment arises. From attachment comes desire, from desire anger, from anger delusion, loss of memory, destruction of discernment, and ruin.",
+    "themes": ["anger", "desire", "attachment", "loss_of_discrimination"],
+    "keywords": ["krodha", "kama", "sanga", "buddhi-nasha"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    }
+  },
+  {
+    "id": "BG_3_35",
+    "chapter": 3,
+    "verses": [35],
+    "sloka_sanskrit_iast": "Śreyān sva-dharmo viguṇaḥ para-dharmāt sv-anuṣṭhitāt | Sva-dharme nidhanaṁ śreyaḥ para-dharmo bhayāvahaḥ ||",
+    "translation_english": "It is better to perform one's own duty imperfectly than another's duty perfectly. Another's duty leads to fear.",
+    "themes": ["svadharma", "identity", "duty"],
+    "keywords": ["svadharma", "paradharma"],
+    "context": {
+      "chapter_theme": "karma_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    }
+  },
+  {
+    "id": "BG_6_5",
+    "chapter": 6,
+    "verses": [5],
+    "sloka_sanskrit_iast": "Uddhared ātmanātmānaṁ nātmānam avasādayet | Ātmaiva hy ātmano bandhur ātmaiva ripur ātmanaḥ ||",
+    "translation_english": "One should elevate oneself by the mind, not degrade oneself. The mind alone is the friend and the enemy of the self.",
+    "themes": ["mind", "self_mastery"],
+    "keywords": ["atma", "manas"],
+    "context": {
+      "chapter_theme": "dhyana_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    }
+  },
+  {
+    "id": "BG_12_15",
+    "chapter": 12,
+    "verses": [15],
+    "sloka_sanskrit_iast": "Yasmān nodvijate loko lokān nodvijate ca yaḥ | Harṣāmara-bhayodvegair mukto yaḥ sa ca me priyaḥ ||",
+    "translation_english": "One who is not disturbed by the world and who does not disturb the world, who is free from joy, envy, fear, and anger, is dear to Me.",
+    "themes": ["equanimity", "devotion", "anger"],
+    "keywords": ["bhakti", "samatva"],
+    "context": {
+      "chapter_theme": "bhakti_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    }
+  },
+  {
+    "id": "BG_2_13",
+    "chapter": 2,
+    "verses": [13],
+    "sloka_sanskrit_iast": "Dehino 'smin yathā dehe kaumāraṁ yauvanaṁ jarā | Tathā dehāntara-prāptir dhīras tatra na muhyati ||",
+    "translation_english": "Just as the embodied soul passes from childhood to youth to old age, so too it passes into another body. The wise are not deluded by this.",
+    "themes": ["grief", "impermanence", "self"],
+    "keywords": ["dehin", "deha", "dhira"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Understanding impermanence reduces grief and confusion.",
+      "scope": "metaphysical",
+      "tone": "clarifying"
+    },
+    "image_tags": ["Krishna teaching Arjuna"]
+  },
+  {
+    "id": "BG_2_16",
+    "chapter": 2,
+    "verses": [16],
+    "sloka_sanskrit_iast": "Nāsato vidyate bhāvo nābhāvo vidyate sataḥ | Ubhayor api dṛṣṭo 'ntas tv anayos tattva-darśibhiḥ ||",
+    "translation_english": "The unreal has no existence; the real never ceases to be. The truth about both has been seen by the seers of reality.",
+    "themes": ["reality", "truth", "discernment"],
+    "keywords": ["sat", "asat", "tattva"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Clarity arises from distinguishing the real from the transient.",
+      "scope": "philosophical",
+      "tone": "analytical"
+    },
+    "image_tags": ["Krishna discourse"]
+  },
+  {
+    "id": "BG_2_21",
+    "chapter": 2,
+    "verses": [21],
+    "sloka_sanskrit_iast": "Veda-vināśinaṁ nityaṁ ya enam ajam avyayam | Kathaṁ sa puruṣaḥ pārtha kaṁ ghātayati hanti kam ||",
+    "translation_english": "One who knows the self to be indestructible, eternal, unborn, and immutable—how can such a person kill or cause another to be killed?",
+    "themes": ["self", "non_violence", "discernment"],
+    "keywords": ["atma", "avinashi", "nitya"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Knowledge of the self alters perception of action and consequence.",
+      "scope": "metaphysical",
+      "tone": "reflective"
+    },
+    "image_tags": ["Krishna explaining self"]
+  },
+  {
+    "id": "BG_2_56",
+    "chapter": 2,
+    "verses": [56],
+    "sloka_sanskrit_iast": "Duḥkheṣv anudvigna-manāḥ sukheṣu vigata-spṛhaḥ | Vīta-rāga-bhaya-krodhaḥ sthita-dhīr munir ucyate ||",
+    "translation_english": "One who is not disturbed by distress, who does not hanker after happiness, and who is free from attachment, fear, and anger, is called a sage of steady wisdom.",
+    "themes": ["equanimity", "anger", "fear", "steadiness"],
+    "keywords": ["krodha", "bhaya", "sthita-dhi", "vairagya"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Inner steadiness is marked by freedom from agitation caused by pleasure and pain.",
+      "scope": "descriptive",
+      "tone": "analytical"
+    },
+    "supportive_practices": ["cultivating emotional awareness", "quiet reflection"],
+    "image_tags": ["serene Krishna", "steady wisdom"]
+  },
+  {
+    "id": "BG_2_58",
+    "chapter": 2,
+    "verses": [58],
+    "sloka_sanskrit_iast": "Yadā saṁharate cāyaṁ kūrmo 'ṅgānīva sarvaśaḥ | Indriyāṇīndriyārthebhyas tasya prajñā pratiṣṭhitā ||",
+    "translation_english": "One who withdraws the senses from sense objects, as a tortoise withdraws its limbs into the shell, is firmly fixed in wisdom.",
+    "themes": ["sense_control", "self_restraint", "wisdom"],
+    "keywords": ["indriya", "samyama", "prajna"],
+    "context": {
+      "chapter_theme": "sankhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Wisdom involves conscious withdrawal from overwhelming sensory engagement.",
+      "scope": "descriptive",
+      "tone": "illustrative"
+    },
+    "supportive_practices": ["sensory moderation", "intentional stillness"],
+    "image_tags": ["Krishna calm discourse"]
+  },
+  {
+    "id": "BG_3_30",
+    "chapter": 3,
+    "verses": [30],
+    "sloka_sanskrit_iast": "Mayi sarvāṇi karmāṇi sannyasyādhyātma-cetasā | Nirāśīr nirmamo bhūtvā yudhyasva vigata-jvaraḥ ||",
+    "translation_english": "Dedicate all actions to Me, with your mind focused on the Self, free from expectation and possessiveness, and fight without inner agitation.",
+    "themes": ["action", "detachment", "inner_calm"],
+    "keywords": ["sannyasa", "nirasha", "jvara"],
+    "context": {
+      "chapter_theme": "karma_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Action performed without inner agitation is emphasized over withdrawal.",
+      "scope": "ethical",
+      "tone": "instructional"
+    },
+    "supportive_practices": ["focused action", "mental dedication"],
+    "image_tags": ["Krishna guiding Arjuna"]
+  },
+  {
+    "id": "BG_4_18",
+    "chapter": 4,
+    "verses": [18],
+    "sloka_sanskrit_iast": "Karmaṇy akarma yaḥ paśyed akarmaṇi ca karma yaḥ | Sa buddhimān manuṣyeṣu sa yuktaḥ kṛtsna-karma-kṛt ||",
+    "translation_english": "One who sees inaction in action and action in inaction is wise among humans and is engaged in all actions with understanding.",
+    "themes": ["wisdom", "discernment", "action"],
+    "keywords": ["karma", "akarma", "buddhi"],
+    "context": {
+      "chapter_theme": "jnana_karma_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "True understanding of action transcends surface appearances.",
+      "scope": "philosophical",
+      "tone": "analytical"
+    },
+    "image_tags": ["Krishna explaining karma"]
+  },
+  {
+    "id": "BG_4_34",
+    "chapter": 4,
+    "verses": [34],
+    "sloka_sanskrit_iast": "Tad viddhi praṇipātena paripraśnena sevayā | Upadekṣyanti te jñānaṁ jñāninas tattva-darśinaḥ ||",
+    "translation_english": "Learn the truth by approaching a spiritual teacher with humility, inquiry, and service. The wise who have seen the truth will instruct you.",
+    "themes": ["learning", "humility", "knowledge"],
+    "keywords": ["jnana", "guru", "vinaya"],
+    "context": {
+      "chapter_theme": "jnana_karma_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "True knowledge arises through humility and inquiry.",
+      "scope": "ethical",
+      "tone": "instructional"
+    },
+    "image_tags": ["Krishna teaching disciple"]
+  },
+  {
+    "id": "BG_5_8_9",
+    "chapter": 5,
+    "verses": [8, 9],
+    "sloka_sanskrit_iast": "Naiva kiñcit karomīti yukto manyeta tattva-vit | Paśyañ śṛṇvan spṛśañ jighrann aśnan gacchan svapan śvasan ||",
+    "translation_english": "One who knows the truth thinks, 'I do nothing at all,' even while seeing, hearing, touching, smelling, eating, moving, sleeping, and breathing.",
+    "themes": ["non_doership", "self_knowledge", "detachment"],
+    "keywords": ["akarta", "tattva-vit", "sakshi"],
+    "context": {
+      "chapter_theme": "karma_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Freedom arises from seeing oneself as the witness, not the doer.",
+      "scope": "metaphysical",
+      "tone": "contemplative"
+    },
+    "image_tags": ["meditative Krishna"]
+  },
+  {
+    "id": "BG_5_20",
+    "chapter": 5,
+    "verses": [20],
+    "sloka_sanskrit_iast": "Na prahṛṣyet priyaṁ prāpya nodvijet prāpya cāpriyam | Sthira-buddhir asammūḍho brahma-vid brahmaṇi sthitaḥ ||",
+    "translation_english": "One who neither rejoices upon obtaining the pleasant nor laments upon encountering the unpleasant is steady in understanding and established in wisdom.",
+    "themes": ["equanimity", "balance", "wisdom"],
+    "keywords": ["sthira-buddhi", "samatva"],
+    "context": {
+      "chapter_theme": "karma_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Inner balance reflects clarity of understanding.",
+      "scope": "descriptive",
+      "tone": "calm"
+    },
+    "image_tags": ["calm Krishna"]
+  },
+  {
+    "id": "BG_6_23",
+    "chapter": 6,
+    "verses": [23],
+    "sloka_sanskrit_iast": "Taṁ vidyād duḥkha-saṁyoga-viyogaṁ yoga-saṁjñitam | Sa niścayena yoktavyo yogo 'nirviṇṇa-cetasā ||",
+    "translation_english": "Know that state to be yoga which is the separation from union with suffering. This yoga should be practiced with determination and a steady mind.",
+    "themes": ["yoga", "freedom", "steadiness"],
+    "keywords": ["yoga", "duhkha", "niścaya"],
+    "context": {
+      "chapter_theme": "dhyana_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Yoga is inner freedom, not escape.",
+      "scope": "practical",
+      "tone": "encouraging"
+    },
+    "image_tags": ["meditative Krishna"]
+  },
+  {
+    "id": "BG_6_26",
+    "chapter": 6,
+    "verses": [26],
+    "sloka_sanskrit_iast": "Yato yato niścarati manaś cañcalam asthiram | Tatas tato niyamyaitad ātmany eva vaśaṁ nayet ||",
+    "translation_english": "Wherever the restless and unsteady mind wanders, one should gently bring it back under the control of the Self.",
+    "themes": ["mind", "discipline", "concentration"],
+    "keywords": ["manas", "chanchala", "niyama"],
+    "context": {
+      "chapter_theme": "dhyana_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Mental steadiness develops through patient redirection, not force.",
+      "scope": "practical",
+      "tone": "gentle"
+    },
+    "supportive_practices": ["breath awareness", "gentle attention"],
+    "image_tags": ["calm Krishna meditation"]
+  },
+  {
+    "id": "BG_7_3",
+    "chapter": 7,
+    "verses": [3],
+    "sloka_sanskrit_iast": "Manuṣyāṇāṁ sahasreṣu kaścid yatati siddhaye | Yatatām api siddhānāṁ kaścin māṁ vetti tattvataḥ ||",
+    "translation_english": "Among thousands of people, one strives for perfection, and among those who strive, hardly one truly knows Me.",
+    "themes": ["effort", "knowledge", "rarity"],
+    "keywords": ["sadhana", "siddhi", "tattva"],
+    "context": {
+      "chapter_theme": "jnana_vijnana_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "True understanding requires sustained effort.",
+      "scope": "descriptive",
+      "tone": "sobering"
+    },
+    "image_tags": ["Krishna teaching truth"]
+  },
+  {
+    "id": "BG_8_7",
+    "chapter": 8,
+    "verses": [7],
+    "sloka_sanskrit_iast": "Tasmāt sarveṣu kāleṣu mām anusmara yudhya ca | Mayy arpita-mano-buddhir mām evaiṣyasy asaṁśayaḥ ||",
+    "translation_english": "Therefore, remember Me at all times and perform your duty. With mind and intellect fixed on Me, you will surely attain Me.",
+    "themes": ["remembrance", "duty", "devotion"],
+    "keywords": ["smarana", "bhakti", "karma"],
+    "context": {
+      "chapter_theme": "akshara_brahma_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Remembrance harmonizes action and devotion.",
+      "scope": "devotional",
+      "tone": "assuring"
+    },
+    "image_tags": ["Krishna guiding warrior"]
+  },
+  {
+    "id": "BG_9_22",
+    "chapter": 9,
+    "verses": [22],
+    "sloka_sanskrit_iast": "Ananyāś cintayanto māṁ ye janāḥ paryupāsate | Teṣāṁ nityābhiyuktānāṁ yoga-kṣemaṁ vahāmy aham ||",
+    "translation_english": "To those who are constantly devoted to Me and who worship Me with exclusive focus, I provide what they lack and preserve what they have.",
+    "themes": ["devotion", "trust", "surrender"],
+    "keywords": ["bhakti", "ananya", "yoga-kshema"],
+    "context": {
+      "chapter_theme": "raja_vidya_raja_guhya_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Single-minded devotion removes anxiety about outcomes.",
+      "scope": "devotional",
+      "tone": "assuring"
+    },
+    "image_tags": ["devotional Krishna"]
+  },
+  {
+    "id": "BG_10_8",
+    "chapter": 10,
+    "verses": [8],
+    "sloka_sanskrit_iast": "Ahaṁ sarvasya prabhavo mattaḥ sarvaṁ pravartate | Iti matvā bhajante māṁ budhā bhāva-samanvitāḥ ||",
+    "translation_english": "I am the source of all spiritual and material worlds. Knowing this, the wise worship Me with devotion.",
+    "themes": ["devotion", "cosmic_origin", "wisdom"],
+    "keywords": ["prabhava", "bhakti", "buddha"],
+    "context": {
+      "chapter_theme": "vibhuti_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Wisdom culminates in reverent understanding.",
+      "scope": "devotional",
+      "tone": "exalting"
+    },
+    "image_tags": ["cosmic Krishna"]
+  },
+  {
+    "id": "BG_11_32",
+    "chapter": 11,
+    "verses": [32],
+    "sloka_sanskrit_iast": "Kālo 'smi loka-kṣaya-kṛt pravṛddho lokān samāhartum iha pravṛttaḥ |",
+    "translation_english": "I am Time, the great destroyer of worlds, engaged here in annihilating all beings.",
+    "themes": ["impermanence", "time", "awe"],
+    "keywords": ["kala", "laya", "virat"],
+    "context": {
+      "chapter_theme": "vishvarupa_darshana_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "cosmic vision"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Confrontation with impermanence dissolves ego.",
+      "scope": "cosmic",
+      "tone": "awe_inspiring"
+    },
+    "image_tags": ["Vishvarupa Krishna"]
+  },
+  {
+    "id": "BG_12_13_14",
+    "chapter": 12,
+    "verses": [13, 14],
+    "sloka_sanskrit_iast": "Adveṣṭā sarva-bhūtānāṁ maitraḥ karuṇa eva ca | Nirmamo nirahaṅkāraḥ sama-duḥkha-sukhaḥ kṣamī ||",
+    "translation_english": "One who is free from hatred, friendly and compassionate to all beings, free from possessiveness and ego, balanced in pleasure and pain, and forgiving—such a devotee is dear to Me.",
+    "themes": ["compassion", "equanimity", "devotion"],
+    "keywords": ["adveshta", "karuna", "ahankara"],
+    "context": {
+      "chapter_theme": "bhakti_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Devotion expresses itself through inner balance and compassion.",
+      "scope": "ethical",
+      "tone": "affirmative"
+    },
+    "image_tags": ["compassionate Krishna"]
+  },
+  {
+    "id": "BG_13_8_12",
+    "chapter": 13,
+    "verses": [8, 9, 10, 11, 12],
+    "sloka_sanskrit_iast": "Amanitvam adambhitvam ahiṁsā kṣāntir ārjavam ...",
+    "translation_english": "Humility, unpretentiousness, non-violence, forgiveness, simplicity, and steady pursuit of knowledge—this is declared to be wisdom.",
+    "themes": ["humility", "wisdom", "virtue"],
+    "keywords": ["amanitva", "jnana", "ksanti"],
+    "context": {
+      "chapter_theme": "kshetra_kshetrajna_vibhaga_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Wisdom expresses itself as character, not intellect alone.",
+      "scope": "ethical",
+      "tone": "enumerative"
+    },
+    "image_tags": ["Krishna teaching virtues"]
+  },
+  {
+    "id": "BG_14_22",
+    "chapter": 14,
+    "verses": [22],
+    "sloka_sanskrit_iast": "Prakāśaṁ ca pravṛttiṁ ca moham eva ca pāṇḍava | Na dveṣṭi sampravṛttāni na nivṛttāni kāṅkṣati ||",
+    "translation_english": "One who neither hates illumination, activity, and delusion when they arise, nor longs for them when they cease, transcends the modes.",
+    "themes": ["gunas", "equanimity", "transcendence"],
+    "keywords": ["gunas", "prakasha", "moha"],
+    "context": {
+      "chapter_theme": "guna_traya_vibhaga_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Freedom lies in non-reactivity toward inner states.",
+      "scope": "philosical",
+      "tone": "analytical"
+    },
+    "image_tags": ["Krishna teaching gunas"]
+  },
+  {
+    "id": "BG_15_7",
+    "chapter": 15,
+    "verses": [7],
+    "sloka_sanskrit_iast": "Mamaivāṁśo jīva-loke jīva-bhūtaḥ sanātanaḥ | Manaḥ-ṣaṣṭhānīndriyāṇi prakṛti-sthāni karṣati ||",
+    "translation_english": "The living beings in this conditioned world are My eternal fragments. Due to conditioned life, they struggle with the six senses, including the mind.",
+    "themes": ["self", "mind", "bondage"],
+    "keywords": ["jiva", "amsa", "indriya"],
+    "context": {
+      "chapter_theme": "purushottama_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Inner struggle arises from identification with the senses.",
+      "scope": "metaphysical",
+      "tone": "descriptive"
+    },
+    "image_tags": ["Krishna cosmic form"]
+  },
+  {
+    "id": "BG_16_1",
+    "chapter": 16,
+    "verses": [1],
+    "sloka_sanskrit_iast": "Abhayaṁ sattva-saṁśuddhir jñāna-yoga-vyavasthitiḥ | Dānaṁ damaś ca yajñaś ca svādhyāyas tapa ārjavam ||",
+    "translation_english": "Fearlessness, purity of heart, cultivation of knowledge, self-control, sacrifice, study, and simplicity—these are divine qualities.",
+    "themes": ["virtue", "fearlessness", "discipline"],
+    "keywords": ["abhaya", "sattva", "dama"],
+    "context": {
+      "chapter_theme": "daivasura_sampad_vibhaga_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Inner virtues form the foundation of spiritual life.",
+      "scope": "ethical",
+      "tone": "enumerative"
+    },
+    "image_tags": ["Krishna divine qualities"]
+  },
+  {
+    "id": "BG_17_16",
+    "chapter": 17,
+    "verses": [16],
+    "sloka_sanskrit_iast": "Manaḥ-prasādaḥ saumyatvaṁ maunam ātma-vinigrahaḥ | Bhāva-saṁśuddhir ity etat tapo mānasam ucyate ||",
+    "translation_english": "Serenity of mind, gentleness, silence, self-control, and purity of emotion—this is called mental austerity.",
+    "themes": ["mental_discipline", "serenity", "self_control"],
+    "keywords": ["manah-prasada", "mauna", "tapas"],
+    "context": {
+      "chapter_theme": "shraddha_traya_vibhaga_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Mental refinement is an inner discipline.",
+      "scope": "practical",
+      "tone": "descriptive"
+    },
+    "supportive_practices": ["silence", "mental gentleness"],
+    "image_tags": ["calm Krishna"]
+  },
+  {
+    "id": "BG_18_14",
+    "chapter": 18,
+    "verses": [14],
+    "sloka_sanskrit_iast": "Adhiṣṭhānaṁ tathā kartā karaṇaṁ ca pṛthag-vidham | Vividhāś ca pṛthak ceṣṭā daivaṁ caivātra pañcamam ||",
+    "translation_english": "The body, the doer, the instruments, the different kinds of effort, and divine will—these are the five factors of action.",
+    "themes": ["action", "responsibility", "non_doership"],
+    "keywords": ["daiva", "kartā", "karma"],
+    "context": {
+      "chapter_theme": "moksha_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Action arises from multiple causes, not ego alone.",
+      "scope": "philosophical",
+      "tone": "analytical"
+    },
+    "image_tags": ["Krishna teaching Arjuna"]
+  },
+  {
+    "id": "BG_18_26",
+    "chapter": 18,
+    "verses": [26],
+    "sloka_sanskrit_iast": "Mukta-saṅgo 'nahaṁ-vādī dhṛty-utsāha-samanvitaḥ | Siddhy-asiddhyor nirvikāraḥ kartā sāttvika ucyate ||",
+    "translation_english": "One who is free from attachment and ego, endowed with determination and enthusiasm, and unaffected by success or failure, is called a doer in the mode of goodness.",
+    "themes": ["action", "non_attachment", "equanimity"],
+    "keywords": ["sattva", "ahankara", "dhriti"],
+    "context": {
+      "chapter_theme": "moksha_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Pure action is free from ego and reactivity.",
+      "scope": "ethical",
+      "tone": "descriptive"
+    },
+    "image_tags": ["Krishna teaching Arjuna"]
+  },
+  {
+    "id": "BG_18_57",
+    "chapter": 18,
+    "verses": [57],
+    "sloka_sanskrit_iast": "Cetasā sarva-karmāṇi mayi sannyasya mat-paraḥ | Buddhi-yogam upāśritya mac-cittaḥ satataṁ bhava ||",
+    "translation_english": "Mentally surrender all actions to Me, be devoted to Me, take refuge in discernment, and remain conscious of Me always.",
+    "themes": ["surrender", "devotion", "discernment"],
+    "keywords": ["sannyasa", "buddhi-yoga", "bhakti"],
+    "context": {
+      "chapter_theme": "moksha_sannyasa_yoga",
+      "speaker": "Krishna",
+      "listener": "Arjuna",
+      "setting": "Kurukshetra battlefield"
+    },
+    "interpretive_notes": {
+      "core_teaching": "Inner surrender harmonizes action and wisdom.",
+      "scope": "devotional",
+      "tone": "assuring"
+    },
+    "image_tags": ["Krishna blessing Arjuna"]
+  }
+]

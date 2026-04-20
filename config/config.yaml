@@ -1,0 +1,56 @@
+system:
+  name: "Gita GPT"
+  version: "1.0.0"
+  mode: "production"
+
+corpus:
+  path: "data/corpus.json"
+  validation:
+    strict_schema: true
+    require_mandatory_fields: true
+  
+retrieval:
+  hybrid:
+    dense_weight: 0.6
+    sparse_weight: 0.4
+    top_k: 5
+    context_expansion: true
+    neighbor_verses: 2
+  
+  embeddings:
+    model: "sentence-transformers/all-MiniLM-L6-v2"
+    dimension: 384
+    
+  sparse:
+    algorithm: "bm25"
+    k1: 1.5
+    b: 0.75
+
+reasoning:
+  llm:
+    provider: "gemini"
+    model: "models/gemini-2.5-flash"
+    temperature: 0.3
+    max_tokens: 1500
+  
+  grounding:
+    strict_mode: true
+    fail_on_unsupported_claims: true
+    citation_required: true
+
+response:
+  format: "structured"
+  include_visual_context: true
+  max_supportive_practices: 3
+
+logging:
+  level: "INFO"
+  trace_execution: true
+  log_file: "logs/gita_gpt.log"
+  
+evaluation:
+  metrics:
+    - "retrieval_recall"
+    - "citation_precision"
+    - "hallucination_rate"
+    - "refusal_accuracy"
