@@ -1,6 +1,10 @@
 import argparse
 import sys
 
+# Fix Unicode output on Windows
+if sys.stdout.encoding != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 from src.orchestrator.orchestrator import GitaGPTOrchestrator
 
 
