@@ -1,3 +1,4 @@
+import re
 from src.core.state import SystemState
 
 ABSOLUTE_PHRASES = [
@@ -58,9 +59,10 @@ class PluralityChecker:
         }
         count = 0
         for node in state.reasoning_graph:
-            lower = node.claim.lower()
             for phrase, replacement in replacements.items():
-                if phrase in lower:
-                    node.claim = node.claim.replace(phrase, replacement)
-                    count += 1
+                pattern = re.compile(re.escape(phrase), re.IGNORECASE)
+                new_claim, n = pattern.subn(replacement, node.claim)
+                if n:
+                    node.claim = new_claim
+                    count += n
         return count

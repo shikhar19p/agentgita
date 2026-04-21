@@ -25,17 +25,16 @@ class SparseRetriever:
     
     def _create_searchable_text(self, verse: Dict[str, Any]) -> str:
         parts = []
-        
         parts.append(verse.get("translation_english", ""))
-        
         themes = verse.get("themes", [])
         if themes:
             parts.append(" ".join(themes))
-        
         keywords = verse.get("keywords", [])
         if keywords:
             parts.append(" ".join(keywords))
-        
+        core_teaching = verse.get("interpretive_notes", {}).get("core_teaching", "")
+        if core_teaching:
+            parts.append(core_teaching)
         return " ".join(parts)
     
     def _tokenize(self, text: str) -> List[str]:

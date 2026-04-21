@@ -142,6 +142,89 @@ class GitaGPTOrchestrator:
 
         return result
 
+    def process_query_structured(self, query: str) -> dict:
+        """Return structured data for UI rendering instead of a flat string."""
+        enriched_query = self.conversation_memory.enrich_query(query)
+        state = SystemState(query=query, active_query=enriched_query)
+        self._react_loop(state)
+
+        if state.should_refuse() or not state.retrieved_verses:
+            return {
+                "is_refusal": True,
+                "refusal_message": state.final_response or "I cannot answer this question.",
+                "query": query,
+            }
+
+        primary = state.retrieved_verses[0]
+        vd = primary.verse_data
+
+        chapter = vd.get("chapter", "?")
+        verses = vd.get("verses", [])
+        if len(verses) == 1:
+            verse_ref = f"{chapter}.{verses[0]}"
+        elif verses:
+            verse_ref = f"{chapter}.{verses[0]}-{verses[-1]}"
+        else:
+            verse_ref = str(chapter)
+
+        interpretation = self._extract_llm_interpretation(state)
+
+        if state.final_response and not state.should_refuse():
+            themes = []
+            for rv in state.retrieved_verses[:3]:
+                themes.extend(rv.verse_data.get("themes", []))
+            self.conversation_memory.add_turn(
+                query=query,
+                response=interpretation[:200],
+                verse_ids=[rv.verse_id for rv in state.retrieved_verses],
+                themes=list(dict.fromkeys(themes))[:5],
+            )
+
+        return {
+            "is_refusal": False,
+            "query": query,
+            "verse_ref": f"BG {verse_ref}",
+            "chapter": chapter,
+            "verses": verses,
+            "chapter_theme": vd.get("context", {}).get("chapter_theme", ""),
+            "sanskrit": vd.get("sloka_sanskrit_iast", ""),
+            "translation": vd.get("translation_english", ""),
+            "core_teaching": vd.get("interpretive_notes", {}).get("core_teaching", ""),
+            "interpretation": interpretation,
+            "supportive_practices": vd.get("supportive_practices", [])[:3],
+            "image_tags": vd.get("image_tags", [])[:2],
+            "themes": vd.get("themes", []),
+            "supporting_verses": [
+                {
+                    "ref": f"BG {rv.verse_data.get('chapter')}.{rv.verse_data.get('verses', [0])[0]}",
+                    "translation": rv.verse_data.get("translation_english", ""),
+                    "score": round(rv.relevance_score, 3),
+                }
+                for rv in state.retrieved_verses[1:3]
+            ],
+            "contradictions": [c.description for c in state.contradictions],
+            "retrieval_confidence": round(state.retrieval_confidence, 3),
+        }
+
+    def _extract_llm_interpretation(self, state: SystemState) -> str:
+        _structural = ("Perspective A:", "Perspective B:", "Synthesis:", "Primary teaching:", "Supporting context:")
+        for node in reversed(state.reasoning_graph):
+            if node.grounded and node.claim and not any(node.claim.startswith(p) for p in _structural):
+                return node.claim
+        parts = []
+        for node in state.reasoning_graph:
+            if not node.grounded:
+                continue
+            claim = node.claim
+            for prefix in _structural:
+                if claim.startswith(prefix):
+                    stripped = claim[len(prefix):].strip()
+                    parts.append(stripped)
+                    break
+            else:
+                parts.append(claim)
+        return "\n\n".join(parts) if parts else ""
+
     def reset_memory(self):
         """Clear conversation history — call between independent sessions."""
         self.conversation_memory.clear()
@@ -260,8 +343,10 @@ class GitaGPTOrchestrator:
         """For SIMPLE queries, synthesise a single reasoning node without dialectical agent."""
         if state.retrieved_verses:
             top = state.retrieved_verses[0]
+            teaching = top.verse_data.get("interpretive_notes", {}).get("core_teaching", "")
+            claim_text = teaching or top.verse_data.get("translation_english", "")[:200]
             node = ReasoningNode(
-                claim=top.verse_data.get("translation_english", "")[:200],
+                claim=f"Primary teaching: {claim_text}",
                 supporting_verses=[top.verse_id],
                 grounded=True,
                 confidence=top.relevance_score,
