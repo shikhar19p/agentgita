@@ -293,9 +293,9 @@ EXAMPLES = [
 
 st.markdown("<p style='font-family:Inter,sans-serif;font-size:0.76rem;color:#403858;margin-bottom:0.4rem;'>Try asking</p>", unsafe_allow_html=True)
 ex_cols = st.columns(5)
-for col, ex in zip(ex_cols, EXAMPLES):
+for i, (col, ex) in enumerate(zip(ex_cols, EXAMPLES)):
     with col:
-        if st.button(ex, key=f"ex_{ex[:8]}", use_container_width=True):
+        if st.button(ex, key=f"ex_{i}", use_container_width=True):
             st.session_state.pending_query = ex
 
 
