@@ -15,7 +15,7 @@ class GeminiClient:
     def __init__(self,
                  model: str = "gemini-1.5-pro",
                  temperature: float = 0.3,
-                 max_tokens: int = 500):  # reduced for speed
+                 max_tokens: int = 750):
         self.model_name = model
         self.temperature = temperature
         self.max_tokens = max_tokens
@@ -81,8 +81,19 @@ class GeminiClient:
 
     @staticmethod
     def _build_system_prompt() -> str:
-        return """You are a grounded interpreter of the Bhagavad Gita. Apply the provided verse directly to the user's question.
-Rules: use only the given verse text; cite the verse ID (e.g. BG 2.47); acknowledge ambiguity; avoid absolute claims; scholarly respectful tone; no preamble — begin immediately."""
+        return """You are an expert interpreter of the Bhagavad Gita. Using ONLY the provided verse(s), give a clear, grounded answer to the user's question.
+
+Write 2–3 paragraphs:
+1. What the verse directly teaches — cite its ID (e.g. "BG 2.47 teaches…")
+2. How this teaching applies practically to the user's question
+3. If multiple verses are provided, show how they connect or complement each other
+
+Rules:
+- Cite verse IDs when making claims
+- Use ONLY the provided verse text — never reference or invent other verses
+- If the verse only partially addresses the question, acknowledge that honestly
+- Respectful, scholarly tone — no motivational clichés
+- Begin immediately without any preamble or greeting"""
 
     @staticmethod
     def _build_user_prompt(query: str,

@@ -97,18 +97,6 @@ html, body, [data-testid="stAppViewContainer"] {
     box-shadow: 0 0 10px rgba(212,160,23,0.2) !important;
     transform: translateY(-1px) !important;
 }
-/* Submit button distinct */
-[data-testid="stFormSubmitButton"] > button {
-    background: linear-gradient(135deg, #8a4a10, #5a2800) !important;
-    border-color: #d4a017 !important;
-    color: #f5e49c !important;
-    padding: 0.75rem 1.2rem !important;
-    font-size: 0.85rem !important;
-}
-[data-testid="stFormSubmitButton"] > button:hover {
-    background: linear-gradient(135deg, #a85a18, #703010) !important;
-}
-
 /* Cards */
 .verse-card {
     background: linear-gradient(160deg, #131626, #191730);
@@ -227,10 +215,6 @@ html, body, [data-testid="stAppViewContainer"] {
     color: #b06030;
     margin-bottom: 0.35rem;
 }
-.conf-wrap { margin-bottom: 0.8rem; }
-.conf-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #504870; }
-.conf-bar { height: 3px; background: #181628; border-radius: 2px; margin-top: 0.25rem; }
-.conf-fill { height: 3px; border-radius: 2px; background: linear-gradient(90deg, #304878, #d4a017); }
 
 .refusal-card {
     background: #0e0c1a;
@@ -300,11 +284,11 @@ st.markdown("""
 
 # ── Example buttons ───────────────────────────────────────────────────────────
 EXAMPLES = [
-    "How do I deal with anger?",
-    "What is the nature of the self?",
-    "Focus on work, not results?",
-    "How to find peace amid suffering?",
-    "What does the Gita say about duty?",
+    "How to overcome anger & fear?",
+    "What is the eternal self (Atman)?",
+    "How to act without attachment?",
+    "Path to inner peace & equanimity",
+    "What is one's true dharma?",
 ]
 
 st.markdown("<p style='font-family:Inter,sans-serif;font-size:0.76rem;color:#403858;margin-bottom:0.4rem;'>Try asking</p>", unsafe_allow_html=True)
@@ -315,22 +299,22 @@ for col, ex in zip(ex_cols, EXAMPLES):
             st.session_state.pending_query = ex
 
 
-# ── Query form ────────────────────────────────────────────────────────────────
-with st.form("qform", clear_on_submit=True):
-    c1, c2 = st.columns([8, 1])
-    with c1:
-        typed_query = st.text_input(
-            "query",
-            placeholder="What weighs on your mind? Ask with sincerity…",
-            label_visibility="collapsed",
-        )
-    with c2:
-        submitted = st.form_submit_button("Ask ›", use_container_width=True)
+# ── Query input (no form — only Ask button triggers submission) ───────────────
+c1, c2 = st.columns([8, 1])
+with c1:
+    typed_query = st.text_input(
+        "query",
+        placeholder="What weighs on your mind? Ask with sincerity…",
+        label_visibility="collapsed",
+        key="query_field",
+    )
+with c2:
+    ask_clicked = st.button("Ask ›", use_container_width=True)
 
 
 # ── Determine which query to run ──────────────────────────────────────────────
 query_to_run = ""
-if submitted and typed_query and typed_query.strip():
+if ask_clicked and typed_query and typed_query.strip():
     query_to_run = typed_query.strip()
 elif st.session_state.pending_query:
     query_to_run = st.session_state.pending_query
@@ -339,8 +323,6 @@ elif st.session_state.pending_query:
 
 # ── Process & render ──────────────────────────────────────────────────────────
 def render_right_panel(result):
-    conf = result.get("retrieval_confidence", 0)
-    conf_pct = int(min(conf * 100, 100))
     contradictions = result.get("contradictions", [])
     core = result.get("core_teaching", "")
     translation = result.get("translation", "")
@@ -349,10 +331,6 @@ def render_right_panel(result):
     <div class="info-card" style="margin-bottom:0.8rem;">
         <div class="info-label">Your Question</div>
         <div class="info-text">"{result['query']}"</div>
-    </div>
-    <div class="conf-wrap">
-        <div class="conf-label">Retrieval confidence · {conf_pct}%</div>
-        <div class="conf-bar"><div class="conf-fill" style="width:{conf_pct}%;"></div></div>
     </div>"""
 
     if contradictions:
