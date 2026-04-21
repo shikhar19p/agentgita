@@ -7,7 +7,7 @@ from src.orchestrator.orchestrator import GitaGPTOrchestrator
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Gita GPT",
+    page_title="Agentic RAG for Grounded Ethical Reasoning",
     page_icon="🪷",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -45,13 +45,14 @@ html, body, [data-testid="stAppViewContainer"] {
 .hero-om { font-size: 2.8rem; color: #d4a017; line-height: 1; }
 .hero-title {
     font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
+    font-size: 1.35rem;
     font-weight: 700;
     background: linear-gradient(135deg, #c49010, #f5e49c, #c49010);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: 0.06em;
-    margin: 0.2rem 0 0.3rem;
+    letter-spacing: 0.04em;
+    line-height: 1.55;
+    margin: 0.3rem 0 0.35rem;
 }
 .hero-sub {
     font-family: 'Lora', serif;
@@ -265,8 +266,8 @@ for key, default in [("history", []), ("current", None), ("pending_query", "")]:
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("### ॐ  Gita GPT")
-    st.markdown("<p style='font-size:0.76rem;color:#504868;font-family:Lora,serif;font-style:italic;'>Wisdom grounded in sacred text</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-family:Cinzel,serif;font-size:0.82rem;font-weight:600;color:#d4a017;letter-spacing:0.04em;line-height:1.5;margin-bottom:0.2rem;'>Agentic RAG System<br>for Grounded Ethical Reasoning</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:0.72rem;color:#504868;font-family:Lora,serif;font-style:italic;'>Bhagavad Gita · Agentic RAG</p>", unsafe_allow_html=True)
     st.divider()
     if st.button("✦  New Conversation", use_container_width=True):
         get_orchestrator().reset_memory()
@@ -291,8 +292,8 @@ with st.sidebar:
 st.markdown("""
 <div class="hero">
     <div class="hero-om">ॐ</div>
-    <div class="hero-title">Gita GPT</div>
-    <div class="hero-sub">Grounded wisdom from the Bhagavad Gita · Agentic RAG</div>
+    <div class="hero-title">Design and Implementation of an Agentic<br>Retrieval-Augmented Generation (RAG) System<br>for Grounded Ethical Reasoning</div>
+    <div class="hero-sub">Grounded in the Bhagavad Gita · Agentic RAG Pipeline</div>
 </div>
 """, unsafe_allow_html=True)
 
