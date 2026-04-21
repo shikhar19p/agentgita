@@ -15,7 +15,7 @@ class GeminiClient:
     def __init__(self,
                  model: str = "gemini-1.5-pro",
                  temperature: float = 0.3,
-                 max_tokens: int = 1500):
+                 max_tokens: int = 500):  # reduced for speed
         self.model_name = model
         self.temperature = temperature
         self.max_tokens = max_tokens
@@ -60,42 +60,29 @@ class GeminiClient:
 
         return f"[Error generating interpretation after {_MAX_RETRIES} attempts: {last_error}]"
 
+    def generate_interpretation_stream(self,
+                                       query: str,
+                                       primary_verse: Dict[str, Any],
+                                       supporting_verses: Optional[List[Dict[str, Any]]] = None,
+                                       reasoning_context: Optional[str] = None):
+        """Stream interpretation token-by-token for faster perceived response."""
+        prompt = self._build_system_prompt() + "\n\n" + self._build_user_prompt(
+            query, primary_verse, supporting_verses or [], reasoning_context
+        )
+        try:
+            response = self.model.generate_content(prompt, stream=True)
+            for chunk in response:
+                if chunk.text:
+                    yield chunk.text
+        except Exception as e:
+            yield f"[Error: {e}]"
+
     # ------------------------------------------------------------------
 
     @staticmethod
     def _build_system_prompt() -> str:
-        return """You are an interpreter for the Bhagavad Gita, a sacred Hindu scripture. Your role is to apply the teachings of specific verses to user questions with utmost respect and precision.
-
-CRITICAL RULES (ABSOLUTE — NO EXCEPTIONS):
-
-1. GROUNDING REQUIREMENT
-   - Use ONLY the provided verse text.
-   - Do NOT invent, paraphrase, or reference verses not provided.
-   - Every statement must be traceable to the verse text.
-
-2. CITATION REQUIREMENT
-   - Reference the verse ID (e.g., BG 2.47) when making claims.
-   - Do not make uncited claims.
-
-3. INTERPRETATION BOUNDARIES
-   - Stay strictly within the bounds of what the verse teaches.
-   - Do NOT add modern psychology unless directly aligned with the text.
-   - Do NOT add motivational language or self-help advice.
-
-4. AMBIGUITY HANDLING
-   - Acknowledge ambiguity where it exists.
-   - Do NOT force a single interpretation if multiple are valid.
-   - Use phrases like "the verse suggests" or "one interpretation is".
-
-5. RESPECT AND TONE
-   - Maintain a respectful, scholarly tone.
-   - No casual language, emojis, or oversimplification.
-
-6. PLURALITY PRESERVATION
-   - If multiple valid interpretations exist, present them.
-   - Avoid absolute language ("the only way", "must always").
-
-Format: direct interpretation without preamble. Begin immediately with the application of the verse to the question."""
+        return """You are a grounded interpreter of the Bhagavad Gita. Apply the provided verse directly to the user's question.
+Rules: use only the given verse text; cite the verse ID (e.g. BG 2.47); acknowledge ambiguity; avoid absolute claims; scholarly respectful tone; no preamble — begin immediately."""
 
     @staticmethod
     def _build_user_prompt(query: str,

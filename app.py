@@ -5,7 +5,7 @@ if sys.stdout.encoding != "utf-8":
 import streamlit as st
 from src.orchestrator.orchestrator import GitaGPTOrchestrator
 
-# ── Page config ────────────────────────────────────────────────────────────────
+# ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Gita GPT",
     page_icon="🪷",
@@ -13,298 +13,281 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── CSS ────────────────────────────────────────────────────────────────────────
+# ── Global CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
 
-/* ── Base ── */
 html, body, [data-testid="stAppViewContainer"] {
     background: #0b0d14 !important;
     color: #e8dfc8 !important;
 }
 [data-testid="stSidebar"] {
     background: #0f1120 !important;
-    border-right: 1px solid #2a2040;
+    border-right: 1px solid #1e1a30;
 }
 [data-testid="stSidebar"] * { color: #c9bfa8 !important; }
-
-/* ── Hide default Streamlit chrome ── */
 #MainMenu, footer, header { visibility: hidden; }
-.block-container { padding-top: 1.5rem !important; }
+.block-container {
+    padding-top: 1.2rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    max-width: 1200px !important;
+}
 
-/* ── Hero header ── */
+/* Hero */
 .hero {
     text-align: center;
-    padding: 2rem 1rem 1rem;
-    border-bottom: 1px solid #2a2040;
-    margin-bottom: 1.5rem;
+    padding: 1.6rem 1rem 1.2rem;
+    border-bottom: 1px solid #1e1a30;
+    margin-bottom: 1.4rem;
 }
-.hero-om {
-    font-size: 3rem;
-    color: #d4a017;
-    line-height: 1;
-}
+.hero-om { font-size: 2.8rem; color: #d4a017; line-height: 1; }
 .hero-title {
     font-family: 'Cinzel', serif;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #d4a017, #f5e49c, #d4a017);
+    background: linear-gradient(135deg, #c49010, #f5e49c, #c49010);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 0.06em;
-    margin: 0.2rem 0;
+    margin: 0.2rem 0 0.3rem;
 }
 .hero-sub {
     font-family: 'Lora', serif;
     font-style: italic;
-    font-size: 0.95rem;
-    color: #9a8f7a;
-    letter-spacing: 0.03em;
+    font-size: 0.88rem;
+    color: #7a7060;
 }
 
-/* ── Input area ── */
+/* Input */
 .stTextInput > div > div > input {
-    background: #131626 !important;
-    border: 1px solid #3a2f5a !important;
-    border-radius: 12px !important;
+    background: #10121e !important;
+    border: 1px solid #2e2448 !important;
+    border-radius: 10px !important;
     color: #e8dfc8 !important;
     font-family: 'Lora', serif !important;
-    font-size: 1rem !important;
-    padding: 0.8rem 1rem !important;
-    caret-color: #d4a017;
+    font-size: 0.97rem !important;
+    padding: 0.75rem 1rem !important;
 }
 .stTextInput > div > div > input:focus {
     border-color: #d4a017 !important;
-    box-shadow: 0 0 0 2px rgba(212, 160, 23, 0.15) !important;
+    box-shadow: 0 0 0 2px rgba(212,160,23,0.12) !important;
 }
-.stTextInput > div > div > input::placeholder { color: #5a5070 !important; }
+.stTextInput > div > div > input::placeholder { color: #3e3858 !important; }
 
-/* ── Buttons ── */
+/* Buttons */
 .stButton > button {
-    background: linear-gradient(135deg, #6b3fa0, #3d1f6e) !important;
-    color: #f5e49c !important;
-    border: 1px solid #9b6dcc !important;
-    border-radius: 10px !important;
+    background: linear-gradient(135deg, #5a2d8a, #331660) !important;
+    color: #f0e08a !important;
+    border: 1px solid #7a50b0 !important;
+    border-radius: 8px !important;
     font-family: 'Cinzel', serif !important;
+    font-size: 0.78rem !important;
     font-weight: 600 !important;
-    letter-spacing: 0.05em !important;
-    padding: 0.55rem 1.4rem !important;
-    transition: all 0.2s ease !important;
+    letter-spacing: 0.04em !important;
+    padding: 0.45rem 0.9rem !important;
+    transition: all 0.18s !important;
+    white-space: nowrap !important;
 }
 .stButton > button:hover {
-    background: linear-gradient(135deg, #7d50b8, #4e2882) !important;
+    background: linear-gradient(135deg, #6e3aa8, #422080) !important;
     border-color: #d4a017 !important;
-    box-shadow: 0 0 12px rgba(212, 160, 23, 0.25) !important;
+    box-shadow: 0 0 10px rgba(212,160,23,0.2) !important;
     transform: translateY(-1px) !important;
 }
+/* Submit button distinct */
+[data-testid="stFormSubmitButton"] > button {
+    background: linear-gradient(135deg, #8a4a10, #5a2800) !important;
+    border-color: #d4a017 !important;
+    color: #f5e49c !important;
+    padding: 0.75rem 1.2rem !important;
+    font-size: 0.85rem !important;
+}
+[data-testid="stFormSubmitButton"] > button:hover {
+    background: linear-gradient(135deg, #a85a18, #703010) !important;
+}
 
-/* ── Verse card ── */
+/* Cards */
 .verse-card {
-    background: linear-gradient(145deg, #131626, #1a1830);
-    border: 1px solid #2e2448;
-    border-radius: 16px;
-    padding: 1.8rem 2rem;
-    margin-bottom: 1.2rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    background: linear-gradient(160deg, #131626, #191730);
+    border: 1px solid #2a2048;
+    border-radius: 14px;
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 1rem;
     position: relative;
     overflow: hidden;
 }
 .verse-card::before {
     content: "ॐ";
-    position: absolute;
-    top: -10px;
-    right: 20px;
-    font-size: 6rem;
-    color: rgba(212,160,23,0.04);
-    font-family: serif;
+    position: absolute; top: -8px; right: 16px;
+    font-size: 5rem;
+    color: rgba(212,160,23,0.05);
     pointer-events: none;
 }
 .verse-ref {
     font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     color: #d4a017;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
 }
-.verse-chapter-theme {
+.chapter-theme {
     font-family: 'Lora', serif;
     font-style: italic;
-    font-size: 0.78rem;
-    color: #7a6e8a;
-    margin-bottom: 1rem;
+    font-size: 0.76rem;
+    color: #6a5e7a;
+    margin-bottom: 0.9rem;
 }
-.verse-sanskrit {
+.sanskrit {
     font-family: 'Lora', serif;
     font-style: italic;
-    font-size: 1.05rem;
-    color: #c4a35a;
-    line-height: 1.8;
-    border-left: 3px solid #d4a017;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-}
-.verse-translation {
-    font-family: 'Lora', serif;
     font-size: 1rem;
-    color: #d8d0bc;
+    color: #c4a35a;
     line-height: 1.75;
-    margin-bottom: 0.5rem;
+    border-left: 3px solid #d4a017;
+    padding-left: 0.9rem;
+    margin-bottom: 0.9rem;
 }
+.translation {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: #d0c8b8;
+    line-height: 1.72;
+}
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.7rem; }
+.tag {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+}
+.tag-theme { background: #1a1230; color: #9070c0; border: 1px solid #302050; }
+.tag-practice { background: #0c1c1c; color: #508870; border: 1px solid #183030; }
 
-/* ── Interpretation card ── */
 .interp-card {
-    background: linear-gradient(145deg, #0f1a1f, #131f25);
-    border: 1px solid #1e3a3a;
-    border-radius: 16px;
-    padding: 1.6rem 2rem;
-    margin-bottom: 1.2rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    background: linear-gradient(160deg, #0e1820, #121c24);
+    border: 1px solid #1a3030;
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1rem;
+    min-height: 80px;
 }
 .section-label {
     font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    color: #5a9e8a;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    color: #407a68;
     text-transform: uppercase;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.6rem;
 }
 .interp-text {
     font-family: 'Lora', serif;
-    font-size: 1rem;
-    color: #ccd8d2;
-    line-height: 1.85;
+    font-size: 0.95rem;
+    color: #c0ccc8;
+    line-height: 1.82;
+    white-space: pre-wrap;
 }
 
-/* ── Tag pills ── */
-.tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
-.tag {
-    display: inline-block;
-    padding: 0.22rem 0.7rem;
-    border-radius: 20px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-}
-.tag-theme { background: #1e1535; color: #9b78cc; border: 1px solid #3a2860; }
-.tag-practice { background: #0e2020; color: #5a9e7a; border: 1px solid #1a4040; }
-.tag-verse { background: #1a1a0e; color: #b8a040; border: 1px solid #3a3018; }
-
-/* ── Supporting verses ── */
-.support-card {
-    background: #0f1120;
-    border: 1px solid #1e1a30;
+.info-card {
+    background: #0e0e1a;
+    border: 1px solid #1a1828;
     border-radius: 10px;
     padding: 0.9rem 1.1rem;
-    margin-bottom: 0.6rem;
-}
-.support-ref { font-family: 'Cinzel', serif; font-size: 0.72rem; color: #7a6090; letter-spacing: 0.1em; }
-.support-text { font-family: 'Lora', serif; font-size: 0.88rem; color: #a09888; line-height: 1.6; margin-top: 0.25rem; }
-
-/* ── Contradiction badge ── */
-.contradiction-badge {
-    background: #1a0e0a;
-    border: 1px solid #4a2a1a;
-    border-radius: 8px;
-    padding: 0.5rem 0.8rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.78rem;
-    color: #c07040;
-    margin-bottom: 0.4rem;
-}
-
-/* ── Refusal card ── */
-.refusal-card {
-    background: #100e1a;
-    border: 1px solid #2a1e3a;
-    border-radius: 16px;
-    padding: 2rem;
-    text-align: center;
-}
-.refusal-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
-.refusal-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    color: #9b78cc;
     margin-bottom: 0.8rem;
 }
-.refusal-text { font-family: 'Lora', serif; font-size: 0.95rem; color: #8a7a98; line-height: 1.7; }
-
-/* ── Chat history item ── */
-.history-item {
-    padding: 0.5rem 0.6rem;
-    margin-bottom: 0.3rem;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.15s;
+.info-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: #504870;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
 }
-.history-item:hover { background: #1a1530; border-color: #2e2448; }
-.history-q { font-family: 'Inter', sans-serif; font-size: 0.82rem; color: #c4b8d8; }
-.history-v { font-family: 'Cinzel', serif; font-size: 0.68rem; color: #7a6090; letter-spacing: 0.08em; margin-top: 0.15rem; }
+.info-text {
+    font-family: 'Lora', serif;
+    font-size: 0.88rem;
+    color: #a098b8;
+    line-height: 1.6;
+    font-style: italic;
+}
 
-/* ── Spinner ── */
+.contradiction-badge {
+    background: #180e0a;
+    border: 1px solid #3a2010;
+    border-radius: 7px;
+    padding: 0.4rem 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.74rem;
+    color: #b06030;
+    margin-bottom: 0.35rem;
+}
+.conf-wrap { margin-bottom: 0.8rem; }
+.conf-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #504870; }
+.conf-bar { height: 3px; background: #181628; border-radius: 2px; margin-top: 0.25rem; }
+.conf-fill { height: 3px; border-radius: 2px; background: linear-gradient(90deg, #304878, #d4a017); }
+
+.refusal-card {
+    background: #0e0c1a;
+    border: 1px solid #201830;
+    border-radius: 14px;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+.refusal-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+.refusal-title { font-family: 'Cinzel', serif; font-size: 1rem; color: #8060a8; margin-bottom: 0.6rem; }
+.refusal-text { font-family: 'Lora', serif; font-size: 0.92rem; color: #706080; line-height: 1.7; }
+
+.history-q { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #b8aec8; }
+.history-v { font-family: 'Cinzel', serif; font-size: 0.66rem; color: #604e78; letter-spacing: 0.08em; }
+hr { border-color: #1e1830 !important; }
 .stSpinner > div { border-top-color: #d4a017 !important; }
-[data-testid="stStatusWidget"] { color: #d4a017 !important; }
-
-/* ── Divider ── */
-hr { border-color: #2a2040 !important; }
-
-/* ── Confidence bar ── */
-.conf-bar-wrap { margin-top: 0.4rem; }
-.conf-label { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: #6a6080; }
-.conf-bar { height: 3px; background: #1e1830; border-radius: 2px; margin-top: 0.2rem; }
-.conf-fill { height: 3px; border-radius: 2px; background: linear-gradient(90deg, #3a6090, #d4a017); }
 </style>
 """, unsafe_allow_html=True)
 
 
-# ── Orchestrator (cached) ──────────────────────────────────────────────────────
-@st.cache_resource(show_spinner="Loading sacred wisdom...")
+# ── Orchestrator ──────────────────────────────────────────────────────────────
+@st.cache_resource(show_spinner="Loading sacred wisdom…")
 def get_orchestrator():
     return GitaGPTOrchestrator()
 
 
-# ── Session state ──────────────────────────────────────────────────────────────
-if "history" not in st.session_state:
-    st.session_state.history = []   # list of dicts
-if "current" not in st.session_state:
-    st.session_state.current = None
-if "pending_query" not in st.session_state:
-    st.session_state.pending_query = ""
+# ── Session state ─────────────────────────────────────────────────────────────
+for key, default in [("history", []), ("current", None), ("pending_query", "")]:
+    if key not in st.session_state:
+        st.session_state[key] = default
 
 
-# ── Sidebar ────────────────────────────────────────────────────────────────────
+# ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("### ॐ  Gita GPT")
-    st.markdown("<p style='font-size:0.78rem;color:#6a5a80;font-family:Lora,serif;font-style:italic;'>Seek wisdom grounded in the Bhagavad Gita</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:0.76rem;color:#504868;font-family:Lora,serif;font-style:italic;'>Wisdom grounded in sacred text</p>", unsafe_allow_html=True)
     st.divider()
-
     if st.button("✦  New Conversation", use_container_width=True):
-        orc = get_orchestrator()
-        orc.reset_memory()
+        get_orchestrator().reset_memory()
         st.session_state.history = []
         st.session_state.current = None
         st.rerun()
-
     if st.session_state.history:
-        st.markdown("<p style='font-family:Cinzel,serif;font-size:0.7rem;letter-spacing:0.12em;color:#5a4a70;text-transform:uppercase;margin-top:1rem;'>Recent Questions</p>", unsafe_allow_html=True)
-        for i, item in enumerate(reversed(st.session_state.history[-8:])):
-            verse_label = item.get("verse_ref", "") if not item.get("is_refusal") else "—"
+        st.markdown("<p style='font-family:Cinzel,serif;font-size:0.66rem;letter-spacing:0.12em;color:#403858;text-transform:uppercase;margin-top:1rem;'>Recent</p>", unsafe_allow_html=True)
+        for item in reversed(st.session_state.history[-6:]):
+            verse = item.get("verse_ref", "—") if not item.get("is_refusal") else "—"
+            q = item["query"]
             st.markdown(f"""
-            <div class="history-item">
-                <div class="history-q">{item['query'][:52]}{'…' if len(item['query'])>52 else ''}</div>
-                <div class="history-v">{verse_label}</div>
+            <div style='padding:0.45rem 0.5rem;margin-bottom:0.25rem;border-radius:7px;border:1px solid #181428;'>
+                <div class='history-q'>{q[:50]}{'…' if len(q)>50 else ''}</div>
+                <div class='history-v'>{verse}</div>
             </div>""", unsafe_allow_html=True)
-
     st.divider()
-    st.markdown("<p style='font-size:0.72rem;color:#4a3a58;font-family:Inter,sans-serif;text-align:center;'>No verse is invented.<br>LLMs interpret, not generate.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:0.7rem;color:#382e48;font-family:Inter,sans-serif;text-align:center;'>No verse is invented.<br>LLMs interpret, never fabricate.</p>", unsafe_allow_html=True)
 
 
-# ── Main layout ────────────────────────────────────────────────────────────────
+# ── Hero ──────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero">
     <div class="hero-om">ॐ</div>
@@ -313,166 +296,207 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Example queries
+
+# ── Example buttons ───────────────────────────────────────────────────────────
 EXAMPLES = [
     "How do I deal with anger?",
     "What is the nature of the self?",
-    "Should I focus on results or just do my work?",
-    "How can I find peace amid suffering?",
+    "Focus on work, not results?",
+    "How to find peace amid suffering?",
     "What does the Gita say about duty?",
 ]
 
-col_ex, *_ = st.columns([5, 1])
-with col_ex:
-    st.markdown("<p style='font-family:Inter,sans-serif;font-size:0.8rem;color:#5a4a70;margin-bottom:0.4rem;'>Try asking:</p>", unsafe_allow_html=True)
-    ex_cols = st.columns(len(EXAMPLES))
-    for col, ex in zip(ex_cols, EXAMPLES):
-        with col:
-            if st.button(ex, key=f"ex_{ex[:10]}", use_container_width=True):
-                st.session_state.pending_query = ex
+st.markdown("<p style='font-family:Inter,sans-serif;font-size:0.76rem;color:#403858;margin-bottom:0.4rem;'>Try asking</p>", unsafe_allow_html=True)
+ex_cols = st.columns(5)
+for col, ex in zip(ex_cols, EXAMPLES):
+    with col:
+        if st.button(ex, key=f"ex_{ex[:8]}", use_container_width=True):
+            st.session_state.pending_query = ex
 
-# Query input
-with st.form("query_form", clear_on_submit=True):
-    cols = st.columns([6, 1])
-    with cols[0]:
-        query = st.text_input(
-            "Ask the Gita",
+
+# ── Query form ────────────────────────────────────────────────────────────────
+with st.form("qform", clear_on_submit=True):
+    c1, c2 = st.columns([8, 1])
+    with c1:
+        typed_query = st.text_input(
+            "query",
             placeholder="What weighs on your mind? Ask with sincerity…",
             label_visibility="collapsed",
-            key="query_field",
         )
-    with cols[1]:
-        submitted = st.form_submit_button("Ask  ›", use_container_width=True)
+    with c2:
+        submitted = st.form_submit_button("Ask ›", use_container_width=True)
 
-# Example button click acts as an immediate submission
-if "pending_query" in st.session_state and st.session_state.pending_query:
-    pending = st.session_state.pending_query
+
+# ── Determine which query to run ──────────────────────────────────────────────
+query_to_run = ""
+if submitted and typed_query and typed_query.strip():
+    query_to_run = typed_query.strip()
+elif st.session_state.pending_query:
+    query_to_run = st.session_state.pending_query
     st.session_state.pending_query = ""
+
+
+# ── Process & render ──────────────────────────────────────────────────────────
+def render_right_panel(result):
+    conf = result.get("retrieval_confidence", 0)
+    conf_pct = int(min(conf * 100, 100))
+    contradictions = result.get("contradictions", [])
+    core = result.get("core_teaching", "")
+    translation = result.get("translation", "")
+
+    html = f"""
+    <div class="info-card" style="margin-bottom:0.8rem;">
+        <div class="info-label">Your Question</div>
+        <div class="info-text">"{result['query']}"</div>
+    </div>
+    <div class="conf-wrap">
+        <div class="conf-label">Retrieval confidence · {conf_pct}%</div>
+        <div class="conf-bar"><div class="conf-fill" style="width:{conf_pct}%;"></div></div>
+    </div>"""
+
+    if contradictions:
+        html += "<div style='margin-top:0.8rem;'><div class='section-label'>Thematic Tensions</div>"
+        for c in contradictions:
+            html += f'<div class="contradiction-badge">⟐ {c}</div>'
+        html += "</div>"
+
+    if core and core != translation:
+        html += f"""
+        <div class="info-card" style="margin-top:0.8rem;background:#0a100a;border-color:#182018;">
+            <div class="info-label">Core Teaching</div>
+            <div class="info-text" style="color:#7a9878;">{core}</div>
+        </div>"""
+
+    return html
+
+
+if query_to_run:
     orc = get_orchestrator()
-    with st.spinner("Seeking wisdom from the Gita…"):
-        result = orc.process_query_structured(pending)
-    st.session_state.history.append(result)
-    st.session_state.current = result
-    st.rerun()
+    left, right = st.columns([3, 2], gap="large")
 
-if submitted and query and query.strip():
-    st.session_state.query_input = ""
-    orc = get_orchestrator()
-    with st.spinner("Seeking wisdom from the Gita…"):
-        result = orc.process_query_structured(query.strip())
-    st.session_state.history.append(result)
-    st.session_state.current = result
-    st.rerun()
+    with st.spinner("Finding relevant verse…"):
+        result, state = orc.process_query_fast(query_to_run)
 
-# ── Response display ───────────────────────────────────────────────────────────
-current = st.session_state.current
+    if result.get("is_refusal"):
+        st.markdown(f"""
+        <div class="refusal-card">
+            <div class="refusal-icon">🙏</div>
+            <div class="refusal-title">Beyond the Gita's Scope</div>
+            <div class="refusal-text">{result.get('refusal_message','This question falls outside what the Bhagavad Gita directly addresses.')}</div>
+        </div>""", unsafe_allow_html=True)
+        st.session_state.history.append(result)
+        st.session_state.current = result
+    else:
+        # Show verse card instantly
+        themes_html = "".join(f'<span class="tag tag-theme">{t}</span>' for t in result.get("themes", [])[:4])
+        ct = result.get("chapter_theme", "")
+        ct_html = f'<div class="chapter-theme">{ct}</div>' if ct else ""
 
-if current is None:
-    if not st.session_state.history:
-        st.markdown("""
-        <div style='text-align:center;padding:4rem 2rem;'>
-            <div style='font-size:3.5rem;margin-bottom:1rem;opacity:0.25;'>🪷</div>
-            <p style='font-family:Lora,serif;font-style:italic;font-size:1.05rem;color:#4a4060;'>
-                "You have a right to perform your prescribed duties,<br>
-                but you are not entitled to the fruits of your actions."
-            </p>
-            <p style='font-family:Cinzel,serif;font-size:0.72rem;color:#3a3050;letter-spacing:0.12em;margin-top:0.5rem;'>
-                — BHAGAVAD GITA 2.47
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-else:
+        with left:
+            st.markdown(f"""
+            <div class="verse-card">
+                <div class="verse-ref">{result['verse_ref']}</div>
+                {ct_html}
+                <div class="sanskrit">{result['sanskrit']}</div>
+                <div class="translation">{result['translation']}</div>
+                <div class="tag-row">{themes_html}</div>
+            </div>""", unsafe_allow_html=True)
+
+            # Stream interpretation
+            st.markdown('<div class="interp-card"><div class="section-label">Interpretation · Applied to Your Question</div>', unsafe_allow_html=True)
+            interp_slot = st.empty()
+            full_interp = ""
+            for chunk in orc.stream_interpretation(state):
+                full_interp += chunk
+                interp_slot.markdown(f'<div class="interp-text">{full_interp}▌</div>', unsafe_allow_html=True)
+            interp_slot.markdown(f'<div class="interp-text">{full_interp}</div>', unsafe_allow_html=True)
+            st.markdown('</div>', unsafe_allow_html=True)
+
+            practices = result.get("supportive_practices", [])
+            if practices:
+                tags_html = "".join(f'<span class="tag tag-practice">{p}</span>' for p in practices)
+                st.markdown(f"""
+                <div style="margin-top:0.2rem;">
+                    <div class="section-label">Supportive Practices</div>
+                    <div class="tag-row">{tags_html}</div>
+                </div>""", unsafe_allow_html=True)
+
+        with right:
+            st.markdown(render_right_panel(result), unsafe_allow_html=True)
+
+        result["interpretation"] = full_interp
+        st.session_state.history.append(result)
+        st.session_state.current = result
+
+elif st.session_state.current is not None:
+    current = st.session_state.current
+
     if current.get("is_refusal"):
         st.markdown(f"""
         <div class="refusal-card">
             <div class="refusal-icon">🙏</div>
             <div class="refusal-title">Beyond the Gita's Scope</div>
-            <div class="refusal-text">{current.get('refusal_message','This question falls outside what the Bhagavad Gita directly addresses.')}</div>
-        </div>
-        """, unsafe_allow_html=True)
+            <div class="refusal-text">{current.get('refusal_message','')}</div>
+        </div>""", unsafe_allow_html=True)
     else:
         left, right = st.columns([3, 2], gap="large")
+        themes_html = "".join(f'<span class="tag tag-theme">{t}</span>' for t in current.get("themes", [])[:4])
+        ct = current.get("chapter_theme", "")
+        ct_html = f'<div class="chapter-theme">{ct}</div>' if ct else ""
+        interp = current.get("interpretation", "").strip()
 
         with left:
-            # Verse card
-            themes_html = "".join(f'<span class="tag tag-theme">{t}</span>' for t in current.get("themes", [])[:4])
-            chapter_theme_html = f'<div class="verse-chapter-theme">{current["chapter_theme"]}</div>' if current.get("chapter_theme") else ""
             st.markdown(f"""
             <div class="verse-card">
                 <div class="verse-ref">{current['verse_ref']}</div>
-                {chapter_theme_html}
-                <div class="verse-sanskrit">{current['sanskrit']}</div>
-                <div class="verse-translation">{current['translation']}</div>
+                {ct_html}
+                <div class="sanskrit">{current['sanskrit']}</div>
+                <div class="translation">{current['translation']}</div>
                 <div class="tag-row">{themes_html}</div>
-            </div>
-            """, unsafe_allow_html=True)
+            </div>""", unsafe_allow_html=True)
 
-            # Interpretation
-            interp = current.get("interpretation", "").strip()
             if interp:
                 st.markdown(f"""
                 <div class="interp-card">
                     <div class="section-label">Interpretation · Applied to Your Question</div>
                     <div class="interp-text">{interp}</div>
-                </div>
-                """, unsafe_allow_html=True)
+                </div>""", unsafe_allow_html=True)
 
-            # Supportive practices
             practices = current.get("supportive_practices", [])
             if practices:
                 tags_html = "".join(f'<span class="tag tag-practice">{p}</span>' for p in practices)
                 st.markdown(f"""
-                <div style="margin-bottom:1.2rem;">
-                    <div class="section-label" style="margin-bottom:0.5rem;">Supportive Practices</div>
+                <div style="margin-top:0.2rem;">
+                    <div class="section-label">Supportive Practices</div>
                     <div class="tag-row">{tags_html}</div>
-                </div>
-                """, unsafe_allow_html=True)
+                </div>""", unsafe_allow_html=True)
 
         with right:
-            # Your query
-            st.markdown(f"""
-            <div style="margin-bottom:1rem;padding:0.9rem 1.1rem;background:#0f0e18;border:1px solid #1e1830;border-radius:10px;">
-                <div class="section-label">Your Question</div>
-                <p style="font-family:Lora,serif;font-style:italic;font-size:0.95rem;color:#b8b0c8;margin:0;">"{current['query']}"</p>
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown(render_right_panel(current), unsafe_allow_html=True)
 
-            # Confidence
-            conf = current.get("retrieval_confidence", 0)
-            conf_pct = int(min(conf * 100, 100))
-            st.markdown(f"""
-            <div class="conf-bar-wrap">
-                <div class="conf-label">Retrieval confidence · {conf_pct}%</div>
-                <div class="conf-bar"><div class="conf-fill" style="width:{conf_pct}%;"></div></div>
-            </div>
-            """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+    <div style='text-align:center;padding:3.5rem 2rem;'>
+        <div style='font-size:3rem;opacity:0.15;margin-bottom:1rem;'>🪷</div>
+        <p style='font-family:Lora,serif;font-style:italic;font-size:1rem;color:#3a3458;'>
+            "You have a right to perform your prescribed duties,<br>
+            but you are not entitled to the fruits of your actions."
+        </p>
+        <p style='font-family:Cinzel,serif;font-size:0.68rem;color:#2e2848;letter-spacing:0.12em;margin-top:0.5rem;'>
+            — BHAGAVAD GITA 2.47
+        </p>
+    </div>""", unsafe_allow_html=True)
 
-            # Contradictions
-            contradictions = current.get("contradictions", [])
-            if contradictions:
-                st.markdown("<div style='margin-top:1rem;'><div class='section-label'>Thematic Tensions Detected</div>", unsafe_allow_html=True)
-                for c in contradictions:
-                    st.markdown(f'<div class="contradiction-badge">⟐ {c}</div>', unsafe_allow_html=True)
-                st.markdown("</div>", unsafe_allow_html=True)
 
-            # Core teaching note
-            core = current.get("core_teaching", "")
-            if core and core != current.get("translation", ""):
-                st.markdown(f"""
-                <div style='margin-top:1rem;padding:0.9rem 1.1rem;background:#0a100a;border:1px solid #1a2a1a;border-radius:10px;'>
-                    <div class='section-label'>Core Teaching</div>
-                    <p style='font-family:Lora,serif;font-size:0.88rem;color:#88a888;line-height:1.65;margin:0;'>{core}</p>
-                </div>
-                """, unsafe_allow_html=True)
-
-# ── History strip at bottom ────────────────────────────────────────────────────
+# ── History strip ─────────────────────────────────────────────────────────────
 if len(st.session_state.history) > 1:
     st.divider()
-    st.markdown("<p style='font-family:Cinzel,serif;font-size:0.72rem;letter-spacing:0.12em;color:#4a3a58;text-transform:uppercase;'>Previous Questions This Session</p>", unsafe_allow_html=True)
-    cols = st.columns(min(len(st.session_state.history) - 1, 4))
-    for i, item in enumerate(reversed(st.session_state.history[:-1][:4])):
-        with cols[i]:
-            label = item["query"][:38] + ("…" if len(item["query"]) > 38 else "")
+    st.markdown("<p style='font-family:Cinzel,serif;font-size:0.66rem;letter-spacing:0.12em;color:#382e48;text-transform:uppercase;'>Previous Questions</p>", unsafe_allow_html=True)
+    prev_items = [i for i in st.session_state.history[:-1]][-4:]
+    hist_cols = st.columns(min(len(prev_items), 4))
+    for i, item in enumerate(reversed(prev_items)):
+        with hist_cols[i]:
+            label = item["query"][:36] + ("…" if len(item["query"]) > 36 else "")
             verse = item.get("verse_ref", "—") if not item.get("is_refusal") else "—"
             if st.button(f"{label}\n{verse}", key=f"hist_{i}", use_container_width=True):
                 st.session_state.current = item

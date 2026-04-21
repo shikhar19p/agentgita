@@ -142,6 +142,95 @@ class GitaGPTOrchestrator:
 
         return result
 
+    def process_query_fast(self, query: str):
+        """Phase 1: run full pipeline WITHOUT LLM. Returns (dict, state) instantly."""
+        enriched_query = self.conversation_memory.enrich_query(query)
+        state = SystemState(query=query, active_query=enriched_query)
+
+        state = self.intent_classifier.classify(state)
+        if state.should_refuse():
+            self._refuse(state)
+            return {"is_refusal": True, "refusal_message": state.final_response or "", "query": query}, state
+
+        run_contradiction = state.intent.complexity in (Complexity.MODERATE, Complexity.COMPLEX)
+        run_dialectical = state.intent.complexity == Complexity.COMPLEX
+
+        state = self._retrieval_with_retry(state)
+        if state.should_refuse():
+            self._refuse(state)
+            return {"is_refusal": True, "refusal_message": state.final_response or "", "query": query}, state
+
+        if run_contradiction:
+            state = self.contradiction_detector.detect(state)
+        if run_dialectical:
+            state = self.dialectical_reasoner.reason(state)
+        else:
+            state = self._build_simple_reasoning(state)
+
+        state = self.grounding_verifier.verify(state)
+        if state.should_refuse() and state.reformulation_count < MAX_RETRIEVAL_ATTEMPTS:
+            state.refusal_reason = None
+            state = self._retrieval_with_retry(state, force_reformulate=True)
+            if not state.should_refuse():
+                state = self.grounding_verifier.verify(state)
+
+        if state.should_refuse():
+            self._refuse(state)
+            return {"is_refusal": True, "refusal_message": state.final_response or "", "query": query}, state
+
+        return self._build_structured_result(state), state
+
+    def stream_interpretation(self, state: SystemState):
+        """Phase 2: stream LLM interpretation. Call after process_query_fast."""
+        if not self.interpretation_generator or not state.retrieved_verses:
+            return
+        primary = state.retrieved_verses[0].verse_data
+        supporting = [rv.verse_data for rv in state.retrieved_verses[1:3]]
+        ctx = self.interpretation_generator._extract_reasoning_context(state)
+        yield from self.interpretation_generator.client.generate_interpretation_stream(
+            query=state.query,
+            primary_verse=primary,
+            supporting_verses=supporting,
+            reasoning_context=ctx,
+        )
+        themes = []
+        for rv in state.retrieved_verses[:3]:
+            themes.extend(rv.verse_data.get("themes", []))
+        self.conversation_memory.add_turn(
+            query=state.query,
+            response="",
+            verse_ids=[rv.verse_id for rv in state.retrieved_verses],
+            themes=list(dict.fromkeys(themes))[:5],
+        )
+
+    def _build_structured_result(self, state: SystemState) -> dict:
+        primary = state.retrieved_verses[0]
+        vd = primary.verse_data
+        chapter = vd.get("chapter", "?")
+        verses = vd.get("verses", [])
+        if len(verses) == 1:
+            verse_ref = f"{chapter}.{verses[0]}"
+        elif verses:
+            verse_ref = f"{chapter}.{verses[0]}-{verses[-1]}"
+        else:
+            verse_ref = str(chapter)
+        return {
+            "is_refusal": False,
+            "query": state.query,
+            "verse_ref": f"BG {verse_ref}",
+            "chapter": chapter,
+            "verses": verses,
+            "chapter_theme": vd.get("context", {}).get("chapter_theme", ""),
+            "sanskrit": vd.get("sloka_sanskrit_iast", ""),
+            "translation": vd.get("translation_english", ""),
+            "core_teaching": vd.get("interpretive_notes", {}).get("core_teaching", ""),
+            "supportive_practices": vd.get("supportive_practices", [])[:3],
+            "image_tags": vd.get("image_tags", [])[:2],
+            "themes": vd.get("themes", []),
+            "contradictions": [c.description for c in state.contradictions],
+            "retrieval_confidence": round(state.retrieval_confidence, 3),
+        }
+
     def process_query_structured(self, query: str) -> dict:
         """Return structured data for UI rendering instead of a flat string."""
         enriched_query = self.conversation_memory.enrich_query(query)
