@@ -273,8 +273,8 @@ if "history" not in st.session_state:
     st.session_state.history = []   # list of dicts
 if "current" not in st.session_state:
     st.session_state.current = None
-if "query_input" not in st.session_state:
-    st.session_state.query_input = ""
+if "pending_query" not in st.session_state:
+    st.session_state.pending_query = ""
 
 
 # ── Sidebar ────────────────────────────────────────────────────────────────────
@@ -309,7 +309,7 @@ st.markdown("""
 <div class="hero">
     <div class="hero-om">ॐ</div>
     <div class="hero-title">Gita GPT</div>
-    <div class="hero-sub">Grounded wisdom from the Bhagavad Gita · 52 verses · Agentic RAG</div>
+    <div class="hero-sub">Grounded wisdom from the Bhagavad Gita · Agentic RAG</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -329,7 +329,7 @@ with col_ex:
     for col, ex in zip(ex_cols, EXAMPLES):
         with col:
             if st.button(ex, key=f"ex_{ex[:10]}", use_container_width=True):
-                st.session_state.query_input = ex
+                st.session_state.pending_query = ex
 
 # Query input
 with st.form("query_form", clear_on_submit=True):
@@ -337,13 +337,23 @@ with st.form("query_form", clear_on_submit=True):
     with cols[0]:
         query = st.text_input(
             "Ask the Gita",
-            value=st.session_state.query_input,
             placeholder="What weighs on your mind? Ask with sincerity…",
             label_visibility="collapsed",
             key="query_field",
         )
     with cols[1]:
         submitted = st.form_submit_button("Ask  ›", use_container_width=True)
+
+# Example button click acts as an immediate submission
+if "pending_query" in st.session_state and st.session_state.pending_query:
+    pending = st.session_state.pending_query
+    st.session_state.pending_query = ""
+    orc = get_orchestrator()
+    with st.spinner("Seeking wisdom from the Gita…"):
+        result = orc.process_query_structured(pending)
+    st.session_state.history.append(result)
+    st.session_state.current = result
+    st.rerun()
 
 if submitted and query and query.strip():
     st.session_state.query_input = ""
@@ -443,19 +453,6 @@ else:
                 st.markdown("<div style='margin-top:1rem;'><div class='section-label'>Thematic Tensions Detected</div>", unsafe_allow_html=True)
                 for c in contradictions:
                     st.markdown(f'<div class="contradiction-badge">⟐ {c}</div>', unsafe_allow_html=True)
-                st.markdown("</div>", unsafe_allow_html=True)
-
-            # Supporting verses
-            supporting = current.get("supporting_verses", [])
-            if supporting:
-                st.markdown("<div style='margin-top:1rem;'><div class='section-label'>Supporting Verses</div>", unsafe_allow_html=True)
-                for sv in supporting:
-                    st.markdown(f"""
-                    <div class="support-card">
-                        <div class="support-ref">{sv['ref']}</div>
-                        <div class="support-text">{sv['translation'][:160]}{'…' if len(sv['translation'])>160 else ''}</div>
-                    </div>
-                    """, unsafe_allow_html=True)
                 st.markdown("</div>", unsafe_allow_html=True)
 
             # Core teaching note
